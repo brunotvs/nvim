@@ -17,6 +17,16 @@ local on_attach = function(client, bufnr)
       desc = desc,
     })
   end
+  local imap = function(keys, func, desc)
+    if desc then
+      desc = 'LSP: ' .. desc
+    end
+
+    vim.keymap.set('i', keys, func, {
+      buffer = bufnr,
+      desc = desc,
+    })
+  end
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
@@ -32,6 +42,7 @@ local on_attach = function(client, bufnr)
   -- See `:help K` for why this keymap
   nmap('<leader>K', vim.lsp.buf.signature_help, 'Signature Documentation')
   nmap('<leader>k', vim.lsp.buf.hover, 'Hover Documentation')
+  imap('<C-K>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
