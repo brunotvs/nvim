@@ -12,6 +12,7 @@ local select_one_or_multi = function(prompt_bufnr)
 end
 return {
   "ThePrimeagen/harpoon",
+  branch = "harpoon2",
   dependencies = {
     'nvim-lua/plenary.nvim',
     {
