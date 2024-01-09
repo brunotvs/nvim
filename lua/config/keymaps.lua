@@ -59,4 +59,4 @@ vim.keymap.set("n", "<leader>*", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
   desc =
   "Replace all ocurrencies"
 })
-vim.keymap.set("n", "]x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make current file runnable" })
+vim.keymap.set("n", "<leader>X", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make current file runnable" })
