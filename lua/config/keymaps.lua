@@ -22,8 +22,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
 vim.keymap.set("n", "J", "mzJ`z", { desc = 'Remove line break' })
 vim.keymap.set("n", "K", "i<cr><Esc>", { desc = 'Breaks line before' })
 -- vim.keymap.set("n", "<C-M-k>", "a<cr><Esc>", { desc = 'Braks line after' })
-vim.keymap.set("n", "<c-o>", "o<Esc>", { desc = 'Add line below' })
-vim.keymap.set("n", "<C-M-o>", "O<Esc>", { desc = 'Add line above' })
+-- vim.keymap.set("n", "<c-o>", "o<Esc>", { desc = 'Add line below' })
+-- vim.keymap.set("n", "<C-M-o>", "O<Esc>", { desc = 'Add line above' })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = 'Down half a page' })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = 'Up half a page' })
 vim.keymap.set("n", "n", "nzzzv", { desc = 'Next search match' })
@@ -59,4 +59,4 @@ vim.keymap.set("n", "<leader>*", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
   desc =
   "Replace all ocurrencies"
 })
-vim.keymap.set("n", "<leader><M-x>", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make current file runnable" })
+vim.keymap.set("n", "]x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make current file runnable" })
