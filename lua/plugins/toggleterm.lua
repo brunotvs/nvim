@@ -17,7 +17,7 @@ return {
   end,
   keys = {
     {
-      "<A-d>",
+      "<M-d>",
       vim.cmd.FloatTerminal,
       desc = "Toggleterm: Open float terminal",
       mode = { 'n', 'v', 't' }

@@ -20,7 +20,7 @@ return {
     require('nvim-tree').setup({ on_attach = on_attach, })
   end,
   keys = {
-    { '<A-b>', vim.cmd.NvimTreeToggle,         desc = 'NvimTree: Toggle',      mode = { 'n', 'v' }, },
-    { '<A-f>', vim.cmd.NvimTreeFindFileToggle, desc = 'NvimTree: Toggle file', mode = { 'n', 'v' }, }
+    { '<M-b>', vim.cmd.NvimTreeToggle,         desc = 'NvimTree: Toggle',      mode = { 'n', 'v' }, },
+    { '<M-f>', vim.cmd.NvimTreeFindFileToggle, desc = 'NvimTree: Toggle file', mode = { 'n', 'v' }, }
   }
 }

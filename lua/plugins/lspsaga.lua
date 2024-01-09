@@ -114,7 +114,7 @@ return {
         })
 
         -- Toggle outline
-        keymap("n", "<A-o>", "<cmd>Lspsaga outline<CR>", {
+        keymap("n", "<M-o>", "<cmd>Lspsaga outline<CR>", {
             desc = 'LSPSaga: Toggle outline'
         })
 
@@ -144,7 +144,7 @@ return {
         })
 
         -- Floating terminal
-        keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>", {
+        keymap({ "n", "t" }, "<M-d>", "<cmd>Lspsaga term_toggle<CR>", {
             desc = 'LSPSaga: Floating terminal'
         })
     end,

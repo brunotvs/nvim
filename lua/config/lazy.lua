@@ -40,6 +40,6 @@ require('lazy').setup({
     }
 })
 
-vim.keymap.set('n', '<A-l>', vim.cmd.Lazy, { desc = "Lazy: Menu" })
+vim.keymap.set('n', '<M-l>', vim.cmd.Lazy, { desc = "Lazy: Menu" })
 vim.keymap.set('n', '<leader>lU', function() require('lazy').update({ show = false }) end,
     { desc = "Lazy: update plugins" })

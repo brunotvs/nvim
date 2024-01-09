@@ -37,7 +37,7 @@ return {
     require('harpoon').setup(opts)
   end,
   keys = {
-    { "<A-h>",      function() require("harpoon.ui").toggle_quick_menu() end, desc = "Harpoon: Toggle menu" },
+    { "<M-h>",      function() require("harpoon.ui").toggle_quick_menu() end, desc = "Harpoon: Toggle menu" },
     { "<leader>ha", function() require("harpoon.mark").add_file() end,        desc = "Harpoon: Add file" },
     { "<leader>hh", function() require("harpoon.ui").nav_file(1) end,         desc = "Harpoon: Nav file 1" },
     { "<leader>hj", function() require("harpoon.ui").nav_file(2) end,         desc = "Harpoon: Nav file 2" },

@@ -4,6 +4,6 @@ return {
     require('symbols-outline').setup(opts)
   end,
   keys = {
-    { '<A-o>', '<cmd>SymbolsOutline<CR>', "SymbolsOutline: Toggle outline" }
+    { '<M-o>', '<cmd>SymbolsOutline<CR>', "SymbolsOutline: Toggle outline" }
   },
 }

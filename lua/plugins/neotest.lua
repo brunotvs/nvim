@@ -83,7 +83,7 @@ return {
       desc = "Neotest: Run Nearest"
     },
     {
-      "<A-t>",
+      "<M-t>",
       function()
         require("neotest").summary.toggle()
         vim.cmd.wincmd('=')

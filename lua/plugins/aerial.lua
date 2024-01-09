@@ -14,6 +14,6 @@ return {
     telescope.load_extension('aerial')
   end,
   keys = {
-    { '<A-o>', '<cmd>AerialToggle!<CR>', "Aerial: Toggle outline" }
+    { '<M-o>', '<cmd>AerialToggle!<CR>', "Aerial: Toggle outline" }
   },
 }
