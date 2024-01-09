@@ -1,6 +1,7 @@
 LspServers.als = {}
 return {
   'williamboman/mason.nvim',
+  build = ':MasonUpdate',
   opts = {
     ensure_installed = MasonEnsureInstalled,
   },
