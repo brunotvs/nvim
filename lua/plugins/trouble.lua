@@ -17,7 +17,7 @@ return {
     vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end,
       { desc = 'Trouble: Quickfix' })
     vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end, { desc = 'Trouble: Loclist' })
-    vim.keymap.set("n", "<leader>xR", function() require("trouble").toggle("lsp_references") end,
+    vim.keymap.set("n", "<leader>xr", function() require("trouble").toggle("lsp_references") end,
       { desc = 'Trouble: Lsp references' })
   end
 }
