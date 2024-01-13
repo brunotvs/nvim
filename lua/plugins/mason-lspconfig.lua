@@ -1,3 +1,19 @@
+local function peekOrHover()
+  local winid = require('ufo').peekFoldedLinesUnderCursor()
+  if winid then
+    local bufnr = vim.api.nvim_win_get_buf(winid)
+    local keys = { 'a', 'i', 'o', 'A', 'I', 'O', 'gd', 'gr' }
+    for _, k in ipairs(keys) do
+      -- Add a prefix key to fire `trace` action,
+      -- if Neovim is 0.8.0 before, remap yourself
+      vim.keymap.set('n', k, '<CR>' .. k, { noremap = false, buffer = bufnr })
+    end
+  else
+    vim.lsp.buf.hover()
+  end
+end
+
+
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(client, bufnr)
@@ -41,7 +57,7 @@ local on_attach = function(client, bufnr)
 
   -- See `:help K` for why this keymap
   nmap('<leader>K', vim.lsp.buf.signature_help, 'Signature Documentation')
-  nmap('<leader>k', vim.lsp.buf.hover, 'Hover Documentation')
+  nmap('<leader>k', peekOrHover, 'Hover Documentation')
   imap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality
