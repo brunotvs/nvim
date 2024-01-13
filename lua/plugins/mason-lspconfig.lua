@@ -1,5 +1,7 @@
 local function peekOrHover()
-  local winid = require('ufo').peekFoldedLinesUnderCursor()
+  local status, module = pcall(require, 'ufo')
+  local ufo = status and module or nil
+  local winid = ufo and ufo.peekFoldedLinesUnderCursor() or false
   if winid then
     local bufnr = vim.api.nvim_win_get_buf(winid)
     local keys = { 'a', 'i', 'o', 'A', 'I', 'O', 'gd', 'gr' }
