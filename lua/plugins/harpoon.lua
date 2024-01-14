@@ -28,22 +28,18 @@ return {
       }
     }
   },
-  opts = {
-    menu = {
-      width = 100,
-    }
-  },
+  opts = {},
   config = function(_, opts)
     require("telescope").load_extension('harpoon')
-    require('harpoon').setup(opts)
+    require('harpoon'):setup(opts)
   end,
   keys = {
-    { "<M-h>",      function() require("harpoon.ui").toggle_quick_menu() end, desc = "Harpoon: Toggle menu" },
-    { "<leader>ha", function() require("harpoon.mark").add_file() end,        desc = "Harpoon: Add file" },
-    { "<leader>hh", function() require("harpoon.ui").nav_file(1) end,         desc = "Harpoon: Nav file 1" },
-    { "<leader>hj", function() require("harpoon.ui").nav_file(2) end,         desc = "Harpoon: Nav file 2" },
-    { "<leader>hk", function() require("harpoon.ui").nav_file(3) end,         desc = "Harpoon: Nav file 3" },
-    { "<leader>hl", function() require("harpoon.ui").nav_file(4) end,         desc = "Harpoon: Nav file 4" },
-    { "<leader>hc", function() require("harpoon.mark").clear_all() end,       desc = "Harpoon: Clear all" }
+    { "<M-h>",      function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end, desc = "Harpoon: Toggle menu" },
+    { "<leader>ha", function() require("harpoon"):list():append() end,                                 desc = "Harpoon: Add file" },
+    { "<leader>hh", function() require("harpoon"):list():select(1) end,                                desc = "Harpoon: Nav file 1" },
+    { "<leader>hj", function() require("harpoon"):list():select(2) end,                                desc = "Harpoon: Nav file 2" },
+    { "<leader>hk", function() require("harpoon"):list():select(3) end,                                desc = "Harpoon: Nav file 3" },
+    { "<leader>hl", function() require("harpoon"):list():select(4) end,                                desc = "Harpoon: Nav file 4" },
+    { "<leader>hc", function() require("harpoon.mark").clear_all() end,                                desc = "Harpoon: Clear all" }
   }
 }
