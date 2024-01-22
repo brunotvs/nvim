@@ -2,11 +2,13 @@ local select_one_or_multi = function(prompt_bufnr)
   local picker = require('telescope.actions.state').get_current_picker(prompt_bufnr)
   local multi = picker:get_multi_selection()
   if not vim.tbl_isempty(multi) then
+    local harpoon = require("harpoon")
+    harpoon:list():clear()
+    local Path = require("plenary.path")
+    local cwd = vim.loop.cwd()
+
     for _, j in pairs(multi) do
       if j.path ~= nil then
-        local harpoon = require("harpoon")
-        local Path = require("plenary.path")
-        local cwd = vim.loop.cwd()
         local item_path = Path:new(j.path):make_relative(cwd)
         harpoon:list():append({ value = item_path, context = { row = 1, col = 0 } })
       end
