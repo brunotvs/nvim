@@ -21,7 +21,7 @@ TableInsert(LspServers, {
     },
   }
 })
-TableInsert(ServersToFilterFromFormat, { 'tsserver', 'jsonls' })
+-- TableInsert(ServersToFilterFromFormat, { 'tsserver', 'jsonls' })
 TableInsert(MasonEnsureInstalled, { "js-debug-adapter", "prettierd", 'eslint_d', 'nxls' })
 TableInsert(TreesitterEnsureInstalled, { "javascript", 'jsdoc', 'jsonc', 'jsonc' })
 TableInsert(NeotestAdapters, {
@@ -111,11 +111,6 @@ return {
       },
     },
   },
-  {
-    "nvim-treesitter/nvim-treesitter-angular",
-    enabled = false,
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-  }
   -- {
   --   'mfussenegger/nvim-lint',
   --   dependencies = {

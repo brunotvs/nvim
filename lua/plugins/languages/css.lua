@@ -2,6 +2,7 @@ LspServers.cssls = {}
 TableInsert(LspServers, { cssls = {} })
 TableInsert(MasonEnsureInstalled, { "prettierd" })
 TableInsert(TreesitterEnsureInstalled, { 'css', 'scss' })
+-- TableInsert(ServersToFilterFromFormat, { 'cssls' })
 return {
   {
     'stevearc/conform.nvim',

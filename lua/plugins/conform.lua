@@ -14,7 +14,7 @@ return {
         end
       end
 
-      return { timeout_ms = 200, lsp_fallback = "always", filter = FilterServers }, on_format
+      return { timeout_ms = 200, lsp_fallback = true, filter = FilterServers }, on_format
     end,
 
     format_after_save = function(bufnr)
@@ -34,7 +34,7 @@ return {
           ["end"] = { args.line2, end_line:len() },
         }
       end
-      require("conform").format({ async = true, lsp_fallback = "always", range = range, filter = FilterServers })
+      require("conform").format({ async = true, lsp_fallback = true, range = range, filter = FilterServers })
     end, { range = true })
     vim.keymap.set('n', '<leader>f', '<cmd>Format<CR>', { desc = 'Format current buffer with LSP' })
   end

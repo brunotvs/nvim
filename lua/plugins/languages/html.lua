@@ -1,7 +1,7 @@
 TableInsert(LspServers, { emmet_ls = {}, html = {} })
 TableInsert(MasonEnsureInstalled, { "prettierd" })
 TableInsert(TreesitterEnsureInstalled, { "html" })
-TableInsert(ServersToFilterFromFormat, { "html" })
+-- TableInsert(ServersToFilterFromFormat, { "html" })
 return {
   {
     'stevearc/conform.nvim',
