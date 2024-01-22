@@ -2,6 +2,7 @@ LspServers.emmet_ls = {}
 LspServers.html = {}
 table.insert(MasonEnsureInstalled, "prettierd")
 table.insert(TreesitterEnsureInstalled, "html")
+table.insert(ServersToFilterFromFormat, "html")
 return {
   {
     'stevearc/conform.nvim',
