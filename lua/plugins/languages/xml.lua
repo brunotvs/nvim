@@ -1,6 +1,6 @@
-LspServers.lemminx = {}
-table.insert(MasonEnsureInstalled, "xmlformatter")
-table.insert(TreesitterEnsureInstalled, 'xml')
+TableInsert(LspServers, { lemminx = {} })
+TableInsert(MasonEnsureInstalled, { "xmlformatter" })
+TableInsert(TreesitterEnsureInstalled, { 'xml' })
 return {
   {
     'stevearc/conform.nvim',

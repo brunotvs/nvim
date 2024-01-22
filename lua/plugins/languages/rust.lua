@@ -1,5 +1,5 @@
-LspServers['rust_analyzer'] = {}
-table.insert(TreesitterEnsureInstalled, 'rust')
+TableInsert(LspServers, { rust_analyzer = {} })
+TableInsert(TreesitterEnsureInstalled, { 'rust' })
 return {
   { 'williamboman/mason-lspconfig.nvim' },
   {

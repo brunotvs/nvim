@@ -19,6 +19,18 @@ function FilterServers(client)
   return true
 end
 
+---@param list table
+---@param values table
+function TableInsert(list, values)
+  for _, value in ipairs(values) do
+    table.insert(list, value)
+  end
+
+  for key, value in pairs(values) do
+    list[key] = value
+  end
+end
+
 LspServers = {
   texlab = {},
 }

@@ -71,7 +71,7 @@ local on_attach = function(client, bufnr)
   end, '[W]orkspace [L]ist Folders')
 
   local clientName = client.name
-  LspServers[clientName]['on_attach'](client, bufnr)
+  pcall(LspServers[clientName]['on_attach'], client, bufnr)
 end
 
 return {

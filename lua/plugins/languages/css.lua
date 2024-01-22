@@ -1,7 +1,7 @@
 LspServers.cssls = {}
-table.insert(MasonEnsureInstalled, "prettierd")
-table.insert(TreesitterEnsureInstalled, 'css')
-table.insert(TreesitterEnsureInstalled, 'scss')
+TableInsert(LspServers, { cssls = {} })
+TableInsert(MasonEnsureInstalled, { "prettierd" })
+TableInsert(TreesitterEnsureInstalled, { 'css', 'scss' })
 return {
   {
     'stevearc/conform.nvim',

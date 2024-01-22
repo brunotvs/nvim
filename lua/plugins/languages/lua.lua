@@ -1,11 +1,14 @@
-LspServers.lua_ls = {
-  settings = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    }
-  },
-}
+TableInsert(LspServers, {
+  lua_ls = {
+    settings = {
+      Lua = {
+        workspace = { checkThirdParty = false },
+        telemetry = { enable = false },
+      }
+    },
+  }
+})
+
 return {
   { 'williamboman/mason-lspconfig.nvim' },
   -- {

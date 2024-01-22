@@ -1,7 +1,7 @@
-LspServers.pyright = {}
-table.insert(MasonEnsureInstalled, 'debugpy')
-table.insert(TreesitterEnsureInstalled, 'python')
-NeotestAdapters["neotest-python"] = {}
+TableInsert(LspServers, { pyright = {} })
+TableInsert(MasonEnsureInstalled, { 'debugpy' })
+TableInsert(TreesitterEnsureInstalled, { 'python' })
+TableInsert(NeotestAdapters, { ['neotest-python'] = {} })
 return {
   {
     'mfussenegger/nvim-dap-python',

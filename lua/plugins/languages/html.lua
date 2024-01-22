@@ -1,8 +1,7 @@
-LspServers.emmet_ls = {}
-LspServers.html = {}
-table.insert(MasonEnsureInstalled, "prettierd")
-table.insert(TreesitterEnsureInstalled, "html")
-table.insert(ServersToFilterFromFormat, "html")
+TableInsert(LspServers, { emmet_ls = {}, html = {} })
+TableInsert(MasonEnsureInstalled, { "prettierd" })
+TableInsert(TreesitterEnsureInstalled, { "html" })
+TableInsert(ServersToFilterFromFormat, { "html" })
 return {
   {
     'stevearc/conform.nvim',
