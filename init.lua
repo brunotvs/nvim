@@ -11,7 +11,7 @@ vim.g.maplocalleader = ' '
 --  the `settings` field of the server config. You must look up that documentation yourself.
 ServersToFilterFromFormat = {}
 function FilterServers(client)
-  for _, value in pairs(ServersToFilterFromFormat) do
+  for _, value in ipairs(ServersToFilterFromFormat) do
     if value == client.name then
       return false
     end
@@ -20,14 +20,12 @@ function FilterServers(client)
 end
 
 ---@param list table
----@param values table
+---@param values List
 function TableInsert(list, values)
-  for _, value in ipairs(values) do
-    table.insert(list, value)
-  end
-
   for key, value in pairs(values) do
-    list[key] = value
+    local list_len = #list
+    local index = (type(key) == 'number' and { list_len + 1 } or { key })[1]
+    list[index] = value
   end
 end
 
