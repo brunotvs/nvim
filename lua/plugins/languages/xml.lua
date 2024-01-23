@@ -1,5 +1,5 @@
 TableInsert(LspServers, { lemminx = {} })
-TableInsert(MasonEnsureInstalled, { "xmlformatter" })
+TableInsert(MasonEnsureInstalled, { 'xmlformatter' })
 TableInsert(TreesitterEnsureInstalled, { 'xml' })
 return {
   {
@@ -7,8 +7,8 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     opts = {
       formatters_by_ft = {
-        xml = { "xmlformatter" },
+        xml = { 'xmlformatter' },
       },
-    }
-  }
+    },
+  },
 }

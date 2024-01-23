@@ -1,9 +1,9 @@
 return {
-  "folke/neodev.nvim",
+  'folke/neodev.nvim',
   opts = {
     library = {
-      plugins = { "neotest" },
-      types = true
-    }
-  }
+      plugins = { 'neotest' },
+      types = true,
+    },
+  },
 }

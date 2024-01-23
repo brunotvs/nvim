@@ -51,15 +51,14 @@ TreesitterEnsureInstalled = {
   'vimdoc',
   'vim',
   'markdown',
-  'markdown_inline'
+  'markdown_inline',
 }
 NeotestAdapters = {}
 
-require("config.lazy")
-require("config.highlight-on-yank")
-require("config.keymaps")
-require("config.options")
-
+require('config.lazy')
+require('config.highlight-on-yank')
+require('config.keymaps')
+require('config.options')
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

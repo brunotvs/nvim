@@ -8,6 +8,12 @@ return {
     require('treesj').setup({ opts })
   end,
   keys = {
-    { '<leader>bt', function() require('treesj').toggle() end, desc = 'Treesj: Toggle block' },
+    {
+      '<leader>bt',
+      function()
+        require('treesj').toggle()
+      end,
+      desc = 'Treesj: Toggle block',
+    },
   },
 }

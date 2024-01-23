@@ -1,12 +1,12 @@
 return -- Lua
 {
-  "folke/zen-mode.nvim",
+  'folke/zen-mode.nvim',
   opts = {
     window = {
       options = {
-        foldcolumn = '0'
-      }
-    }
+        foldcolumn = '0',
+      },
+    },
   },
-  keys = { { '<leader>zz', '<cmd>ZenMode<CR>', desc = 'Zen: Toggle zen mode' } }
+  keys = { { '<leader>zz', '<cmd>ZenMode<CR>', desc = 'Zen: Toggle zen mode' } },
 }

@@ -1,7 +1,7 @@
 return {
-  "ThePrimeagen/refactoring.nvim",
+  'ThePrimeagen/refactoring.nvim',
   dependencies = {
-    { "nvim-lua/plenary.nvim" },
-    { "nvim-treesitter/nvim-treesitter" }
-  }
+    { 'nvim-lua/plenary.nvim' },
+    { 'nvim-treesitter/nvim-treesitter' },
+  },
 }

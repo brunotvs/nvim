@@ -1,7 +1,7 @@
 local ftMap = {
   vim = 'indent',
   python = { 'indent' },
-  git = ''
+  git = '',
 }
 
 local function customizeSelector(bufnr)
@@ -13,13 +13,15 @@ local function customizeSelector(bufnr)
     end
   end
 
-  return require('ufo').getFolds(bufnr, 'lsp'):catch(function(err)
-    return handleFallbackException(err, 'treesitter')
-  end):catch(function(err)
-    return handleFallbackException(err, 'indent')
-  end)
+  return require('ufo')
+    .getFolds(bufnr, 'lsp')
+    :catch(function(err)
+      return handleFallbackException(err, 'treesitter')
+    end)
+    :catch(function(err)
+      return handleFallbackException(err, 'indent')
+    end)
 end
-
 
 local function goPreviousClosedAndPeek()
   require('ufo').goPreviousClosedFold()
@@ -58,9 +60,9 @@ return {
     preview = {
       win_config = {
         border = 'none',
-        winblend = 0
-      }
-    }
+        winblend = 0,
+      },
+    },
   },
   init = function()
     vim.o.foldenable = true
@@ -76,10 +78,33 @@ return {
     ufo.setup(opts)
   end,
   keys = {
-    { 'zR', function() require('ufo').openAllFolds() end,  desc = "UFO: Open all folds" },
-    { 'zM', function() require('ufo').closeAllFolds() end, desc = "UFO: Close all folds" },
-    { 'zn', function() goNextClosedAndPeek() end,          desc = "UFO: Go to next closed and peek" },
-    { 'zp', function() goPreviousClosedAndPeek() end,      desc = "UFO: Go to previous closed and peek" },
+    {
+      'zR',
+      function()
+        require('ufo').openAllFolds()
+      end,
+      desc = 'UFO: Open all folds',
+    },
+    {
+      'zM',
+      function()
+        require('ufo').closeAllFolds()
+      end,
+      desc = 'UFO: Close all folds',
+    },
+    {
+      'zn',
+      function()
+        goNextClosedAndPeek()
+      end,
+      desc = 'UFO: Go to next closed and peek',
+    },
+    {
+      'zp',
+      function()
+        goPreviousClosedAndPeek()
+      end,
+      desc = 'UFO: Go to previous closed and peek',
+    },
   },
-
 }

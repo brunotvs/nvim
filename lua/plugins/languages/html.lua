@@ -1,6 +1,6 @@
 TableInsert(LspServers, { emmet_ls = {}, html = {} })
-TableInsert(MasonEnsureInstalled, { "prettierd" })
-TableInsert(TreesitterEnsureInstalled, { "html" })
+TableInsert(MasonEnsureInstalled, { 'prettierd' })
+TableInsert(TreesitterEnsureInstalled, { 'html' })
 -- TableInsert(ServersToFilterFromFormat, { "html" })
 return {
   {
@@ -8,8 +8,8 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     opts = {
       formatters_by_ft = {
-        html = { "prettierd" },
+        html = { 'prettierd' },
       },
-    }
+    },
   },
 }

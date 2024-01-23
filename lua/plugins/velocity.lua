@@ -1,1 +1,1 @@
-return { "lepture/vim-velocity" }
+return { 'lepture/vim-velocity' }

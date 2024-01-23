@@ -5,11 +5,11 @@ return {
   {
     'rouge8/neotest-rust',
     config = function()
-      require("neotest").setup({
+      require('neotest').setup({
         adapters = {
-          require("neotest-rust")
-        }
+          require('neotest-rust'),
+        },
       })
-    end
-  }
+    end,
+  },
 }

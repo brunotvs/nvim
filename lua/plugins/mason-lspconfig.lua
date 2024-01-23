@@ -15,7 +15,6 @@ local function peekOrHover()
   end
 end
 
-
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(client, bufnr)
@@ -93,13 +92,13 @@ return {
       -- Ensure the servers above are installed
       local mason_lspconfig = require('mason-lspconfig')
 
-      mason_lspconfig.setup {
+      mason_lspconfig.setup({
         ensure_installed = vim.tbl_keys(LspServers),
-      }
+      })
 
-      mason_lspconfig.setup_handlers {
+      mason_lspconfig.setup_handlers({
         function(server_name)
-          require('lspconfig')[server_name].setup {
+          require('lspconfig')[server_name].setup({
             root_dir = LspServers[server_name]['root_dir'],
             name = LspServers[server_name]['name'],
             filetypes = LspServers[server_name]['filetypes'],
@@ -111,9 +110,9 @@ return {
             handlers = LspServers[server_name]['handlers'],
             on_attach = on_attach,
             settings = LspServers[server_name]['settings'],
-          }
+          })
         end,
-      }
+      })
     end,
   },
 }
