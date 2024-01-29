@@ -4,7 +4,20 @@ TableInsert(LspServers, {
       return require('lspconfig.util').root_pattern('angular.json', 'project.json')(fname)
     end,
   },
-  tsserver = {},
+  tsserver = {
+    init_options = {
+      preferences = {
+        includeInlayParameterNameHints = 'all',
+        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+        includeInlayFunctionParameterTypeHints = true,
+        includeInlayVariableTypeHints = true,
+        includeInlayPropertyDeclarationTypeHints = true,
+        includeInlayFunctionLikeReturnTypeHints = true,
+        includeInlayEnumMemberValueHints = true,
+        importModuleSpecifierPreference = 'non-relative',
+      },
+    },
+  },
   eslint = {
     on_attach = function(client, bufnr)
       client.server_capabilities.documentFormattingProvider = true
@@ -100,8 +113,8 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     opts = {
       formatters_by_ft = {
-        javascript = { 'prettierd' },
-        typescript = { 'prettierd' },
+        javascript = { 'prettierd', 'eslint_d' },
+        typescript = { 'prettierd', 'eslint_d' },
         javascriptreact = { 'prettierd' },
         typescriptreact = { 'prettierd' },
         json = { 'prettierd' },

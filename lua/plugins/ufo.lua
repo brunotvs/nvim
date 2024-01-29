@@ -1,3 +1,27 @@
+local function setPeekOrHover(_, bufnr)
+  local function peekOrHover()
+    local status, module = pcall(require, 'ufo')
+    local ufo = status and module or nil
+    local winid = ufo and ufo.peekFoldedLinesUnderCursor() or false
+    if winid then
+      local bufnr = vim.api.nvim_win_get_buf(winid)
+      local keys = { 'a', 'i', 'o', 'A', 'I', 'O', 'gd', 'gr' }
+      for _, k in ipairs(keys) do
+        -- Add a prefix key to fire `trace` action,
+        -- if Neovim is 0.8.0 before, remap yourself
+        vim.keymap.set('n', k, '<CR>' .. k, { noremap = false, buffer = bufnr })
+      end
+    else
+      vim.lsp.buf.hover()
+    end
+  end
+
+  vim.keymap.del('n', '<leader>k', { buffer = bufnr })
+  vim.keymap.set('n', '<leader>k', peekOrHover, { desc = 'UFO: Peek fold or lsp hover', buffer = bufnr })
+end
+
+TableInsert(AdditionalOnAttachFunctions, { setPeekOrHover })
+
 local ftMap = {
   vim = 'indent',
   python = { 'indent' },
@@ -31,22 +55,6 @@ end
 local function goNextClosedAndPeek()
   require('ufo').goNextClosedFold()
   require('ufo').peekFoldedLinesUnderCursor()
-end
-
-local function applyFoldsAndThenCloseAllFolds(providerName)
-  require('async')(function()
-    local bufnr = vim.api.nvim_get_current_buf()
-    -- make sure buffer is attached
-    require('ufo').attach(bufnr)
-    -- getFolds return Promise if providerName == 'lsp'
-    local ranges = await(require('ufo').getFolds(bufnr, providerName))
-    if not vim.tbl_isempty(ranges) then
-      local ok = require('ufo').applyFolds(bufnr, ranges)
-      if ok then
-        require('ufo').closeAllFolds()
-      end
-    end
-  end)
 end
 
 return {
@@ -94,16 +102,12 @@ return {
     },
     {
       'zn',
-      function()
-        goNextClosedAndPeek()
-      end,
+      goNextClosedAndPeek,
       desc = 'UFO: Go to next closed and peek',
     },
     {
       'zp',
-      function()
-        goPreviousClosedAndPeek()
-      end,
+      goPreviousClosedAndPeek,
       desc = 'UFO: Go to previous closed and peek',
     },
   },

@@ -1,8 +1,4 @@
-table.insert(TreesitterEnsureInstalled, 'git_config')
-table.insert(TreesitterEnsureInstalled, 'gitcommit')
-table.insert(TreesitterEnsureInstalled, 'gitignore')
-table.insert(TreesitterEnsureInstalled, 'git_rebase')
-table.insert(TreesitterEnsureInstalled, 'gitattributes')
+TableInsert(TreesitterEnsureInstalled, { 'gitattributes', 'git_rebase', 'gitignore', 'gitcommit', 'git_config' })
 return {
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
@@ -43,7 +39,13 @@ return {
     },
   },
   -- Git related plugins
-  'tpope/vim-fugitive',
+  {
+    'tpope/vim-fugitive',
+    cmd = 'Git',
+    keys = {
+      { 'lg', ':Git<CR>', desc = 'Git: status' },
+    },
+  },
   'tpope/vim-rhubarb', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 }

@@ -33,6 +33,7 @@ LspServers = {
   texlab = {},
 }
 
+---@type string[]
 MasonEnsureInstalled = {
   'latexindent',
   'mypy',
@@ -41,6 +42,7 @@ MasonEnsureInstalled = {
   'isort',
   'commitlint',
 }
+---@type string[]
 TreesitterEnsureInstalled = {
   'c',
   'cpp',
@@ -53,7 +55,11 @@ TreesitterEnsureInstalled = {
   'markdown',
   'markdown_inline',
 }
+---@type string[]
 NeotestAdapters = {}
+
+---@type (fun(client: any, bufnr:integer): nil)[]
+AdditionalOnAttachFunctions = {}
 
 require('config.lazy')
 require('config.highlight-on-yank')

@@ -21,7 +21,7 @@ return {
       if not slow_format_filetypes[vim.bo[bufnr].filetype] then
         return
       end
-      return { lsp_fallback = 'always', filter = FilterServers }
+      return { lsp_fallback = true, filter = FilterServers }
     end,
   },
   init = function()

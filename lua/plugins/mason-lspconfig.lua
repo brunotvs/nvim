@@ -1,20 +1,3 @@
-local function peekOrHover()
-  local status, module = pcall(require, 'ufo')
-  local ufo = status and module or nil
-  local winid = ufo and ufo.peekFoldedLinesUnderCursor() or false
-  if winid then
-    local bufnr = vim.api.nvim_win_get_buf(winid)
-    local keys = { 'a', 'i', 'o', 'A', 'I', 'O', 'gd', 'gr' }
-    for _, k in ipairs(keys) do
-      -- Add a prefix key to fire `trace` action,
-      -- if Neovim is 0.8.0 before, remap yourself
-      vim.keymap.set('n', k, '<CR>' .. k, { noremap = false, buffer = bufnr })
-    end
-  else
-    vim.lsp.buf.hover()
-  end
-end
-
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(client, bufnr)
@@ -58,8 +41,12 @@ local on_attach = function(client, bufnr)
 
   -- See `:help K` for why this keymap
   nmap('<leader>K', vim.lsp.buf.signature_help, 'Signature Documentation')
-  nmap('<leader>k', peekOrHover, 'Hover Documentation')
+  nmap('<leader>k', vim.lsp.buf.hover, 'Hover Documentation')
   imap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+
+  nmap('<c-i>', function()
+    vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled())
+  end, 'Inlay hint')
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -71,6 +58,10 @@ local on_attach = function(client, bufnr)
 
   local clientName = client.name
   pcall(LspServers[clientName]['on_attach'], client, bufnr)
+
+  for _, f in ipairs(AdditionalOnAttachFunctions) do
+    f(client, bufnr)
+  end
 end
 
 return {
@@ -107,6 +98,7 @@ return {
             on_new_config = LspServers[server_name]['on_new_config'],
             capabilities = capabilities,
             cmd = LspServers[server_name]['cmd'],
+            init_options = LspServers[server_name]['init_options'],
             handlers = LspServers[server_name]['handlers'],
             on_attach = on_attach,
             settings = LspServers[server_name]['settings'],

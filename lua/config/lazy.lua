@@ -20,13 +20,6 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
-  -- NOTE: First, some plugins that don't require any configuration
-  -- Git related plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb', -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
-  'folke/which-key.nvim',
-
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
     -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
@@ -47,6 +40,6 @@ require('lazy').setup({
 })
 
 vim.keymap.set('n', '<M-l>', vim.cmd.Lazy, { desc = 'Lazy: Menu' })
-vim.keymap.set('n', '<leader>lU', function()
+vim.keymap.set('n', '<leader>lu', function()
   require('lazy').update({ show = false })
 end, { desc = 'Lazy: update plugins' })
