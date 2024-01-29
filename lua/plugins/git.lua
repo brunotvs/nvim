@@ -43,7 +43,7 @@ return {
     'tpope/vim-fugitive',
     cmd = 'Git',
     keys = {
-      { 'lg', ':Git<CR>', desc = 'Git: status' },
+      { 'lg', '<cmd>Git<CR>', desc = 'Git: status' },
     },
   },
   'tpope/vim-rhubarb', -- Detect tabstop and shiftwidth automatically

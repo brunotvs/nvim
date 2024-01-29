@@ -23,5 +23,5 @@ return {
       ensure_installed()
     end
   end,
-  keys = { { '<M-m>', ':Mason<CR>', desc = 'Mason: Open' } },
+  keys = { { '<M-m>', '<cmd>Mason<CR>', desc = 'Mason: Open' } },
 }
