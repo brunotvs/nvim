@@ -89,5 +89,19 @@ return {
       end,
       desc = 'Harpoon: Clear all',
     },
+    {
+      ']h',
+      function()
+        require('harpoon'):list():next()
+      end,
+      desc = 'Harpoon: Clear all',
+    },
+    {
+      '][',
+      function()
+        require('harpoon'):list():prev()
+      end,
+      desc = 'Harpoon: Clear all',
+    },
   },
 }
