@@ -11,14 +11,17 @@ local function on_attach(bufnr)
 
   -- default mappings
   api.config.mappings.default_on_attach(bufnr)
+
+  vim.keymap.del('n', '<C-k>', { buffer = bufnr })
+  vim.keymap.set('n', 'i', api.node.show_info_popup, opts('Info'))
 end
 
 return {
   'nvim-tree/nvim-tree.lua',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  config = function()
-    require('nvim-tree').setup({ on_attach = on_attach })
-  end,
+  opts = {
+    on_attach = on_attach,
+  },
   keys = {
     { '<M-b>', vim.cmd.NvimTreeToggle, desc = 'NvimTree: Toggle', mode = { 'n', 'v' } },
     { '<M-f>', vim.cmd.NvimTreeFindFileToggle, desc = 'NvimTree: Toggle file', mode = { 'n', 'v' } },
