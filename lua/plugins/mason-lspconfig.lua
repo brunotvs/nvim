@@ -89,20 +89,13 @@ return {
 
       mason_lspconfig.setup_handlers({
         function(server_name)
-          require('lspconfig')[server_name].setup({
-            root_dir = LspServers[server_name]['root_dir'],
-            name = LspServers[server_name]['name'],
-            filetypes = LspServers[server_name]['filetypes'],
-            autostart = LspServers[server_name]['autostart'],
-            single_file_support = LspServers[server_name]['single_file_support'],
-            on_new_config = LspServers[server_name]['on_new_config'],
-            capabilities = capabilities,
-            cmd = LspServers[server_name]['cmd'],
-            init_options = LspServers[server_name]['init_options'],
-            handlers = LspServers[server_name]['handlers'],
-            on_attach = on_attach,
-            settings = LspServers[server_name]['settings'],
-          })
+          local opts = { on_attach = on_attach }
+          for key, value in pairs(LspServers[server_name]) do
+            if key ~= 'on_attach' then
+              opts[key] = value
+            end
+          end
+          require('lspconfig')[server_name].setup(opts)
         end,
       })
     end,
