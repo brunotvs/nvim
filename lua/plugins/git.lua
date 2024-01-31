@@ -22,6 +22,14 @@ return {
           text = '~',
         },
       },
+      preview_config = {
+        -- Options passed to nvim_open_win
+        border = 'none',
+        style = 'minimal',
+        relative = 'cursor',
+        row = 0,
+        col = 1,
+      },
       on_attach = function(bufnr)
         vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk, {
           buffer = bufnr,
