@@ -4,19 +4,18 @@ local function setPeekOrHover(_, bufnr)
     local ufo = status and module or nil
     local winid = ufo and ufo.peekFoldedLinesUnderCursor() or false
     if winid then
-      local bufnr = vim.api.nvim_win_get_buf(winid)
+      local localBufnr = vim.api.nvim_win_get_buf(winid)
       local keys = { 'a', 'i', 'o', 'A', 'I', 'O', 'gd', 'gr' }
       for _, k in ipairs(keys) do
         -- Add a prefix key to fire `trace` action,
         -- if Neovim is 0.8.0 before, remap yourself
-        vim.keymap.set('n', k, '<CR>' .. k, { noremap = false, buffer = bufnr })
+        vim.keymap.set('n', k, '<CR>' .. k, { noremap = false, buffer = localBufnr })
       end
     else
       vim.lsp.buf.hover()
     end
   end
 
-  vim.keymap.del('n', '<leader>k', { buffer = bufnr })
   vim.keymap.set('n', '<leader>k', peekOrHover, { desc = 'UFO: Peek fold or lsp hover', buffer = bufnr })
 end
 
