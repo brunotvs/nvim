@@ -42,6 +42,7 @@ return {
   {
     'tpope/vim-fugitive',
     cmd = 'Git',
+    event = 'BufEnter',
     keys = {
       { 'lg', '<cmd>Git<CR>', desc = 'Git: status' },
     },
