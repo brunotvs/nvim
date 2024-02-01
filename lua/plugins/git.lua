@@ -52,7 +52,7 @@ return {
     cmd = 'Git',
     event = 'BufEnter',
     keys = {
-      { 'lg', '<cmd>Git<CR>', desc = 'Git: status' },
+      { '<leader>lg', '<cmd>Git<CR>', desc = 'Git: status' },
     },
   },
   'tpope/vim-rhubarb', -- Detect tabstop and shiftwidth automatically
