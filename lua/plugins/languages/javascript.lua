@@ -19,7 +19,7 @@ TableInsert(LspServers, {
     },
   },
   eslint = {
-    on_attach = function(client, bufnr)
+    on_attach = function(client, _)
       client.server_capabilities.documentFormattingProvider = true
     end,
   },
@@ -112,6 +112,16 @@ return {
     },
     event = { 'BufReadPre', 'BufNewFile' },
     opts = {
+      formatters = {
+        -- TODO: fix so can be used
+        eslint_lsp = {
+          format = function()
+            vim.lsp.buf.format({
+              name = 'eslint',
+            })
+          end,
+        },
+      },
       formatters_by_ft = {
         javascript = { 'prettierd', 'eslint_d' },
         typescript = { 'prettierd', 'eslint_d' },
