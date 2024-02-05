@@ -22,6 +22,18 @@ TableInsert(LspServers, {
     on_attach = function(client, _)
       client.server_capabilities.documentFormattingProvider = true
     end,
+    filetypes = {
+      'javascript',
+      'javascriptreact',
+      'javascript.jsx',
+      'typescript',
+      'typescriptreact',
+      'typescript.tsx',
+      'vue',
+      'svelte',
+      'astro',
+      'html',
+    },
   },
   jsonls = {
     settings = {
