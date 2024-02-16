@@ -32,7 +32,21 @@ vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Previous search match' })
 vim.keymap.set('n', '<leader>bn', vim.cmd.bnext, { desc = 'Next buffer' })
 vim.keymap.set('n', '<leader>bp', vim.cmd.bnext, { desc = 'Previous buffer' })
 vim.keymap.set('n', '<leader>bd', vim.cmd.bdelete, { desc = 'Delete buffer' })
-vim.keymap.set('n', '<leader>bod', '<cmd>:%bd|e#<CR>', { desc = 'Delete every other buffer' })
+vim.keymap.set('n', '<leader>bod', function()
+  local current_buffer = vim.api.nvim_get_current_buf()
+  local buffers = vim.api.nvim_list_bufs()
+  local count = 0
+  for _, value in ipairs(buffers) do
+    local listed = vim.fn.buflisted(value) == 1
+    if listed and value ~= current_buffer then
+      count = count + 1
+      vim.cmd.bdelete(value)
+    end
+  end
+  local bufstr = count == 1 and ' buffer ' or ' buffers '
+  vim.print(count .. bufstr .. 'deleted')
+end, { desc = 'Delete every other listed buffer' })
+
 vim.keymap.set('n', '<leader>bD', '<cmd>:bdelete!<CR>', { desc = 'Delete buffer' })
 
 -- ThePrimeagen keymaps
