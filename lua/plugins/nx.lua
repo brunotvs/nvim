@@ -1,6 +1,5 @@
 return {
-  'brunotvs/nx.nvim',
-  dev = false,
+  'Equilibris/nx.nvim',
   lazy = false,
   dependencies = {
     'nvim-telescope/telescope.nvim',
