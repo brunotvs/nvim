@@ -1,6 +1,8 @@
 local slow_format_filetypes = {}
 return {
   'stevearc/conform.nvim',
+  url = 'https://github.com/brunotvs/conform.nvim.git',
+  dev = true,
   optional = true,
   event = { 'BufReadPre', 'BufNewFile' },
   opts = {
@@ -36,6 +38,6 @@ return {
       end
       require('conform').format({ async = true, lsp_fallback = true, range = range, filter = FilterServers })
     end, { range = true })
-    vim.keymap.set('n', '<leader>f', '<cmd>Format<CR>', { desc = 'Format current buffer with LSP' })
+    vim.keymap.set('n', '<leader>f', '<cmd>Format<CR>', { desc = 'Conform: Format current buffer' })
   end,
 }
