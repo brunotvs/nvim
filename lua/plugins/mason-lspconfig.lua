@@ -51,7 +51,7 @@ local on_attach = function(client, bufnr)
   nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
   nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
   nmap('<leader>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    vim.lsp.buf.list_workspace_folders()
   end, '[W]orkspace [L]ist Folders')
 
   local clientName = client.name
