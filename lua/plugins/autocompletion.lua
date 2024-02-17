@@ -20,8 +20,8 @@ return {
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
       {
-        'brunotvs/cmp-conventionalcommits',
-        dev = false,
+        'davidsierradz/cmp-conventionalcommits',
+        url = 'https://github.com/brunotvs/cmp-conventionalcommits.git',
         config = function(_, opts)
           require('cmp-conventionalcommits').setup(opts)
         end,
