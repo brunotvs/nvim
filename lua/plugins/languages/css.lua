@@ -1,4 +1,3 @@
-LspServers.cssls = {}
 TableInsert(LspServers, { cssls = {} })
 TableInsert(MasonEnsureInstalled, { 'prettierd' })
 TableInsert(TreesitterEnsureInstalled, { 'css', 'scss' })
@@ -6,7 +5,8 @@ TableInsert(TreesitterEnsureInstalled, { 'css', 'scss' })
 return {
   {
     'stevearc/conform.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
+    dev = true,
+    url = 'https://github.com/brunotvs/conform.nvim.git',
     opts = {
       formatters_by_ft = {
         css = { 'prettierd' },

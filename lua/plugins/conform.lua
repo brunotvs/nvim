@@ -1,8 +1,8 @@
 local slow_format_filetypes = {}
 return {
   'stevearc/conform.nvim',
-  url = 'https://github.com/brunotvs/conform.nvim.git',
   dev = true,
+  url = 'https://github.com/brunotvs/conform.nvim.git',
   optional = true,
   event = { 'BufReadPre', 'BufNewFile' },
   opts = {

@@ -61,7 +61,6 @@ TableInsert(NeotestAdapters, {
 return {
   {
     'mfussenegger/nvim-dap',
-    optional = true,
     dependencies = {
       {
         'williamboman/mason.nvim',
@@ -117,26 +116,28 @@ return {
   },
   {
     'stevearc/conform.nvim',
+    dev = true,
+    url = 'https://github.com/brunotvs/conform.nvim.git',
     dependencies = {
       {
         'williamboman/mason.nvim',
       },
     },
-    event = { 'BufReadPre', 'BufNewFile' },
     opts = {
       formatters = {
-        -- TODO: fix so can be used
         eslint_lsp = {
-          format = function()
-            vim.lsp.buf.format({
-              name = 'eslint',
-            })
+          name = 'eslint',
+          execute = function(config, opts, callback)
+            local options = { async = opts.async, name = config.name }
+
+            local lsp_format = require('conform.lsp_format')
+            lsp_format.format(options, callback)
           end,
         },
       },
       formatters_by_ft = {
-        javascript = { 'prettierd', 'eslint_d' },
-        typescript = { 'prettierd', 'eslint_d' },
+        javascript = { 'prettierd', 'eslint_lsp' },
+        typescript = { 'prettierd', 'eslint_lsp' },
         javascriptreact = { 'prettierd' },
         typescriptreact = { 'prettierd' },
         json = { 'prettierd' },

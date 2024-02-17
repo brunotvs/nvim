@@ -19,7 +19,8 @@ TableInsert(TreesitterEnsureInstalled, { 'graphql' })
 return {
   {
     'stevearc/conform.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
+    dev = true,
+    url = 'https://github.com/brunotvs/conform.nvim.git',
     opts = {
       formatters_by_ft = {
         graphql = { 'prettierd' },
