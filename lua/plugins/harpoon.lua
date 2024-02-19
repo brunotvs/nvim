@@ -94,14 +94,14 @@ return {
       function()
         require('harpoon'):list():next()
       end,
-      desc = 'Harpoon: Clear all',
+      desc = 'Harpoon: Next list item',
     },
     {
-      '][',
+      ']h',
       function()
         require('harpoon'):list():prev()
       end,
-      desc = 'Harpoon: Clear all',
+      desc = 'Harpoon: Previous list item',
     },
   },
 }
