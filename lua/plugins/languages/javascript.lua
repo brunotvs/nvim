@@ -130,8 +130,8 @@ return {
           execute = function(config, opts, callback)
             local options = { async = opts.async, name = config.name }
 
-            local lsp_format = require('conform.lsp_format')
-            lsp_format.format(options, callback)
+            -- local lsp_format = require('conform.lsp_format')
+            vim.lsp.buf.format(options)
           end,
         },
       },
