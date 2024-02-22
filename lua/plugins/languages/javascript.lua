@@ -128,16 +128,16 @@ return {
         eslint_lsp = {
           name = 'eslint',
           execute = function(config, opts, callback)
-            local options = { async = opts.async, name = config.name }
+            local options = { name = config.name }
 
-            -- local lsp_format = require('conform.lsp_format')
-            vim.lsp.buf.format(options)
+            local lsp_format = require('conform.lsp_format')
+            lsp_format.format(options, callback)
           end,
         },
       },
       formatters_by_ft = {
-        javascript = { 'prettierd', 'eslint_lsp' },
-        typescript = { 'prettierd', 'eslint_lsp' },
+        javascript = { 'prettierd', 'eslint_d' },
+        typescript = { 'prettierd', 'eslint_d' },
         javascriptreact = { 'prettierd' },
         typescriptreact = { 'prettierd' },
         json = { 'prettierd' },
