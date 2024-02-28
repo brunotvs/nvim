@@ -40,7 +40,6 @@ MasonEnsureInstalled = {
   'ruff',
   'black',
   'isort',
-  'commitlint',
 }
 ---@type string[]
 TreesitterEnsureInstalled = {
