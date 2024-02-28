@@ -87,7 +87,7 @@ return {
 
       mason_lspconfig.setup_handlers({
         function(server_name)
-          local opts = { on_attach = on_attach }
+          local opts = { on_attach = on_attach, capabilities = capabilities }
           for key, value in pairs(LspServers[server_name]) do
             if key ~= 'on_attach' then
               opts[key] = value
