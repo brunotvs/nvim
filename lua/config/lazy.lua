@@ -33,6 +33,7 @@ require('lazy').setup({
     enabled = true,
     notify = false,
   },
+  concurrency = 4,
   spec = {
     { import = 'plugins' },
     { import = 'plugins.languages' },
