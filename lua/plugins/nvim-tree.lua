@@ -13,6 +13,7 @@ local function on_attach(bufnr)
   api.config.mappings.default_on_attach(bufnr)
 
   vim.keymap.del('n', '<C-k>', { buffer = bufnr })
+  vim.keymap.del('n', 'q', { buffer = bufnr })
   vim.keymap.set('n', 'i', api.node.show_info_popup, opts('Info'))
 end
 
