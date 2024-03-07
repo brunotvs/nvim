@@ -1,6 +1,4 @@
 TableInsert(MasonEnsureInstalled, { 'commitlint' })
-TableInsert(TreesitterEnsureInstalled, { 'css', 'scss' })
--- TableInsert(ServersToFilterFromFormat, { 'cssls' })
 return {
   {
     'mfussenegger/nvim-lint',
