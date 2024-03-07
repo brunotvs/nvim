@@ -66,18 +66,18 @@ return {
       desc = 'Trouble: Lsp references',
     },
     {
-      ']t',
+      ']x',
       function()
         require('trouble').next({ skip_groups = true, jump = true })
       end,
-      desc = 'Trouble: Lsp references',
+      desc = 'Trouble: jump next',
     },
     {
-      '[t',
+      '[x',
       function()
         require('trouble').previous({ skip_groups = true, jump = true })
       end,
-      desc = 'Trouble: Lsp references',
+      desc = 'Trouble: jump previous',
     },
   },
 }
