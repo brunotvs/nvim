@@ -55,11 +55,12 @@ local function goNextClosedAndPeek()
   require('ufo').goNextClosedFold()
   require('ufo').peekFoldedLinesUnderCursor()
 end
-
+--- @type LazySpec
 return {
   'kevinhwang91/nvim-ufo',
   dependencies = { 'kevinhwang91/promise-async', 'nvim-treesitter/nvim-treesitter' },
   event = 'BufEnter',
+  --- @type UfoConfig
   opts = {
     provider_selector = function(bufnr, filetype, buftype)
       return ftMap[filetype] or customizeSelector
@@ -71,6 +72,7 @@ return {
       },
     },
   },
+  main = 'ufo',
   init = function()
     vim.o.foldenable = true
     vim.o.foldlevel = 99
@@ -79,10 +81,6 @@ return {
     -- Fold symbols
     -- vim.o.foldcolumn = '1'
     -- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-  end,
-  config = function(_, opts)
-    local ufo = require('ufo')
-    ufo.setup(opts)
   end,
   keys = {
     {

@@ -8,8 +8,9 @@ return {
     ft = 'python',
     dependencies = {
       'mfussenegger/nvim-dap',
+      'williamboman/mason.nvim',
     },
-    config = function(_)
+    init = function(_)
       local mason_registry = require('mason-registry')
       local debugpy = mason_registry.get_package('debugpy')
       local path = debugpy:get_install_path()
