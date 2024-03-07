@@ -14,7 +14,6 @@ TableInsert(LspServers, {
         includeInlayPropertyDeclarationTypeHints = true,
         includeInlayFunctionLikeReturnTypeHints = true,
         includeInlayEnumMemberValueHints = true,
-        importModuleSpecifierPreference = 'non-relative',
       },
     },
   },
@@ -34,6 +33,7 @@ TableInsert(LspServers, {
       'astro',
       'html',
     },
+    settings = { codeAction = { disableRuleComment = { enable = false }, showDocumentation = { enable = false } } },
   },
   jsonls = {
     settings = {
@@ -116,13 +116,6 @@ return {
   },
   {
     'stevearc/conform.nvim',
-    dev = true,
-    url = 'https://github.com/brunotvs/conform.nvim.git',
-    dependencies = {
-      {
-        'williamboman/mason.nvim',
-      },
-    },
     opts = {
       formatters = {
         eslint_lsp = {
@@ -148,10 +141,6 @@ return {
   -- {
   --   'mfussenegger/nvim-lint',
   --   dependencies = {
-  --     {
-  --       "williamboman/mason.nvim",
-  --     },
-  --   },
   --   event = { 'BufReadPre', 'BufNewFile' },
   --   opts = {
   --     linters_by_ft = {
