@@ -25,6 +25,7 @@ local ftMap = {
   vim = 'indent',
   python = { 'indent' },
   git = '',
+  yaml = 'treesitter',
 }
 
 local function customizeSelector(bufnr)
