@@ -1,4 +1,5 @@
 -- Fuzzy Finder (files, lsp, etc)
+--- @type LazySpec
 return {
   'nvim-telescope/telescope.nvim',
   branch = '0.1.x',

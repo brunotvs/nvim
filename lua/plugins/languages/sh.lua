@@ -1,6 +1,7 @@
 TableInsert(MasonEnsureInstalled, { 'beautysh' })
 TableInsert(LspServers, { bashls = {} })
 
+--- @type LazySpec
 return {
   {
     'stevearc/conform.nvim',

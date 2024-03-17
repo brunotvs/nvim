@@ -1,3 +1,4 @@
+--- @type LazySpec
 return {
   'simrat39/symbols-outline.nvim',
   config = function(_, opts)

@@ -1,3 +1,4 @@
+--- @type LazySpec
 return {
   'rbong/vim-flog',
   keys = {

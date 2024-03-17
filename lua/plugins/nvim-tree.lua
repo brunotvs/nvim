@@ -17,6 +17,7 @@ local function on_attach(bufnr)
   vim.keymap.set('n', 'i', api.node.show_info_popup, opts('Info'))
 end
 
+--- @type LazySpec
 return {
   'nvim-tree/nvim-tree.lua',
   dependencies = { 'nvim-tree/nvim-web-devicons' },

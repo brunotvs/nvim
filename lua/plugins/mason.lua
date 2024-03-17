@@ -1,4 +1,4 @@
-LspServers.als = {}
+--- @type LazySpec
 return {
   'williamboman/mason.nvim',
   build = ':MasonUpdate',

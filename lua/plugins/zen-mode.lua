@@ -1,5 +1,5 @@
-return -- Lua
-{
+--- @type LazySpec
+return {
   'folke/zen-mode.nvim',
   opts = {
     window = {
@@ -8,5 +8,7 @@ return -- Lua
       },
     },
   },
-  keys = { { '<leader>zz', '<cmd>ZenMode<CR>', desc = 'Zen: Toggle zen mode' } },
+  keys = {
+    { '<leader>zz', '<cmd>ZenMode<CR>', desc = 'Zen: Toggle zen mode' },
+  },
 }

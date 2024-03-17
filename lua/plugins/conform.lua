@@ -1,4 +1,5 @@
 local slow_format_filetypes = {}
+--- @type LazySpec
 return {
   'stevearc/conform.nvim',
   dev = false,

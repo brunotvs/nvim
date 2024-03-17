@@ -1,6 +1,8 @@
 TableInsert(LspServers, { yamlls = {} })
 TableInsert(MasonEnsureInstalled, { 'prettierd' })
 TableInsert(TreesitterEnsureInstalled, { 'yaml' })
+
+--- @type LazySpec
 return {
   {
     'stevearc/conform.nvim',

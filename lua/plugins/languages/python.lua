@@ -2,6 +2,8 @@ TableInsert(LspServers, { pyright = {} })
 TableInsert(MasonEnsureInstalled, { 'debugpy' })
 TableInsert(TreesitterEnsureInstalled, { 'python' })
 TableInsert(NeotestAdapters, { ['neotest-python'] = {} })
+
+--- @type LazySpec
 return {
   {
     'mfussenegger/nvim-dap-python',

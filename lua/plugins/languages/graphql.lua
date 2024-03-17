@@ -16,6 +16,8 @@ TableInsert(LspServers, {
 
 TableInsert(MasonEnsureInstalled, { 'prettierd' })
 TableInsert(TreesitterEnsureInstalled, { 'graphql' })
+
+--- @type LazySpec
 return {
   {
     'stevearc/conform.nvim',

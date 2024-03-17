@@ -1,5 +1,7 @@
 TableInsert(LspServers, { rust_analyzer = {} })
 TableInsert(TreesitterEnsureInstalled, { 'rust' })
+
+--- @type LazySpec
 return {
   {
     'rouge8/neotest-rust',

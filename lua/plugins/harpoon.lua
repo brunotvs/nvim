@@ -16,6 +16,8 @@ local select_one_or_multi = function(prompt_bufnr)
   end
   require('telescope.actions').select_default(prompt_bufnr)
 end
+
+--- @type LazySpec
 return {
   'ThePrimeagen/harpoon',
   branch = 'harpoon2',

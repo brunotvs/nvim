@@ -63,6 +63,7 @@ local on_attach = function(client, bufnr)
   end
 end
 
+--- @type LazySpec
 return {
   {
     'williamboman/mason-lspconfig.nvim',

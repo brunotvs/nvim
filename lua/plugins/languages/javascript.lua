@@ -58,6 +58,7 @@ TableInsert(NeotestAdapters, {
   },
 })
 
+--- @type LazySpec
 return {
   {
     'mfussenegger/nvim-dap',
