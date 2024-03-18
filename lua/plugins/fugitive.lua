@@ -3,7 +3,7 @@ return {
   {
     'tpope/vim-fugitive',
     cmd = 'Git',
-    enabled = false,
+    enabled = true,
     event = 'BufEnter',
     keys = {
       { '<leader>lg', '<cmd>Git<CR>', desc = 'Git: status' },
@@ -11,7 +11,7 @@ return {
   },
   {
     'tpope/vim-rhubarb',
-    enabled = false,
+    enabled = true,
     dependencies = {
       'tpope/vim-fugitive',
     },
