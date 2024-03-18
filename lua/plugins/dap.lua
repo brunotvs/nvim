@@ -2,13 +2,7 @@
 return {
   {
     'mfussenegger/nvim-dap',
-    config = function()
-      local dap = require('dap')
-      local dapui = require('dapui')
-      dap.listeners.after.event_initialized['dapui_config'] = dapui.open
-      dap.listeners.before.event_terminated['dapui_config'] = dapui.close
-      dap.listeners.before.event_exited['dapui_config'] = dapui.close
-    end,
+    config = function() end,
     keys = {
       {
         '<F5>',
@@ -58,6 +52,7 @@ return {
     'rcarriga/nvim-dap-ui',
     dependencies = {
       'mfussenegger/nvim-dap',
+      'nvim-neotest/nvim-nio',
     },
     opts = {
       icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
@@ -75,9 +70,13 @@ return {
         },
       },
     },
-    config = function(_, opts)
+    main = 'dapui',
+    init = function()
+      local dap = require('dap')
       local dapui = require('dapui')
-      dapui.setup(opts)
+      dap.listeners.after.event_initialized['dapui_config'] = dapui.open
+      dap.listeners.before.event_terminated['dapui_config'] = dapui.close
+      dap.listeners.before.event_exited['dapui_config'] = dapui.close
     end,
     keys = { {
       '<F7>',

@@ -6,6 +6,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     'antoinemadec/FixCursorHold.nvim',
     'folke/trouble.nvim',
+    'nvim-neotest/nvim-nio',
   },
   opts = {
     -- Can be a list of adapters like what neotest expects,
