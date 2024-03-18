@@ -45,27 +45,36 @@ vim.keymap.set('n', '<leader>lu', function()
   require('lazy').update({ show = false })
 end, { desc = 'Lazy: update plugins' })
 
+local function udapteOutdatedPlugins()
+  local lazy_status = require('lazy.status').has_updates()
+
+  if not lazy_status then
+    return
+  end
+  local updated_plugins = require('lazy.manage.checker').updated
+
+  local plural = #updated_plugins > 1 and 's' or ''
+  vim.notify('Updating ' .. #updated_plugins .. ' plugin' .. plural)
+
+  local lazy = require('lazy')
+
+  lazy.update({
+    show = false,
+    plugins = updated_plugins,
+  })
+end
+
 local group = vim.api.nvim_create_augroup('LazyVim', { clear = true })
 vim.api.nvim_create_autocmd('User', {
   group = group,
   pattern = 'LazyCheck',
   desc = 'Update lazy plugins if no breaking changes',
-  callback = function()
-    local lazy_status = require('lazy.status').has_updates()
+  callback = udapteOutdatedPlugins,
+})
 
-    if not lazy_status then
-      return
-    end
-    local updated_plugins = require('lazy.manage.checker').updated
-
-    local plural = #updated_plugins > 1 and 's' or ''
-    vim.notify('Updating ' .. #updated_plugins .. ' plugin' .. plural)
-
-    local lazy = require('lazy')
-
-    lazy.update({
-      show = false,
-      plugins = updated_plugins,
-    })
-  end,
+vim.api.nvim_create_autocmd('User', {
+  group = group,
+  pattern = 'LazyDone',
+  desc = 'Update lazy plugins if no breaking changes',
+  callback = udapteOutdatedPlugins,
 })
