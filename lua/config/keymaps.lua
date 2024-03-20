@@ -36,11 +36,16 @@ vim.keymap.set('n', '<leader>bod', function()
   local current_buffer = vim.api.nvim_get_current_buf()
   local buffers = vim.api.nvim_list_bufs()
   local count = 0
-  for _, value in ipairs(buffers) do
-    local listed = vim.fn.buflisted(value) == 1
-    if listed and value ~= current_buffer then
+  for _, bufnr in ipairs(buffers) do
+    local listed = vim.fn.buflisted(bufnr) == 1
+    if listed and bufnr ~= current_buffer then
       count = count + 1
-      vim.cmd.bdelete(value)
+      vim.lsp.for_each_buffer_client(bufnr, function(client, client_id, buf_id)
+        if not vim.lsp.buf_is_attached(current_buffer, client_id) then
+          vim.lsp.stop_client(client_id)
+        end
+      end)
+      vim.cmd.bdelete(bufnr)
     end
   end
   local bufstr = count == 1 and ' buffer ' or ' buffers '
