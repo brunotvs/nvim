@@ -38,6 +38,7 @@ require('lazy').setup({
     { import = 'plugins' },
     { import = 'plugins.languages' },
   },
+  ui = { backdrop = 100 },
 })
 
 vim.keymap.set('n', '<M-l>', vim.cmd.Lazy, { desc = 'Lazy: Menu' })
