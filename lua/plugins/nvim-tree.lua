@@ -26,6 +26,27 @@ return {
   },
   keys = {
     { '<M-b>', vim.cmd.NvimTreeToggle, desc = 'NvimTree: Toggle', mode = { 'n', 'v' } },
+    {
+      '<M-B>',
+      function()
+        local api = require('nvim-tree.api')
+        api.tree.open({ focus = true })
+        vim.cmd.only()
+      end,
+      desc = 'NvimTree: Toggle',
+      mode = { 'n', 'v' },
+    },
     { '<M-f>', vim.cmd.NvimTreeFindFileToggle, desc = 'NvimTree: Toggle file', mode = { 'n', 'v' } },
+    {
+      '<M-F>',
+      function()
+        local api = require('nvim-tree.api')
+        api.tree.find_file({ focus = true })
+        api.tree.focus()
+        vim.cmd.only()
+      end,
+      desc = 'NvimTree: Toggle',
+      mode = { 'n', 'v' },
+    },
   },
 }
