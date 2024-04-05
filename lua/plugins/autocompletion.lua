@@ -41,6 +41,7 @@ return {
             luasnip.lsp_expand(args.body)
           end,
         },
+        preselect = cmp.PreselectMode.None,
         sources = {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
