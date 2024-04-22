@@ -90,6 +90,7 @@ return {
       mason_lspconfig.setup_handlers({
         function(server_name)
           if LspServers[server_name] == nil then
+            vim.notify('Removing server ' .. server_name)
             vim.cmd.LspUninstall(server_name)
             return
           end

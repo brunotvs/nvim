@@ -31,24 +31,15 @@ end
 
 LspServers = {
   texlab = {},
+  clangd = {},
 }
 
 ---@type string[]
 MasonEnsureInstalled = {
   'latexindent',
-  'mypy',
-  'ruff',
-  'black',
-  'isort',
 }
 ---@type string[]
 TreesitterEnsureInstalled = {
-  'c',
-  'cpp',
-  'go',
-  'lua',
-  'tsx',
-  'typescript',
   'vimdoc',
   'vim',
   'markdown',
