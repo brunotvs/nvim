@@ -12,6 +12,8 @@ TableInsert(LspServers, {
 
 TableInsert(MasonEnsureInstalled, { 'stylua' })
 
+TableInsert(TreesitterEnsureInstalled, { 'lua' })
+
 --- @type LazySpec
 return {
   { 'williamboman/mason-lspconfig.nvim' },
