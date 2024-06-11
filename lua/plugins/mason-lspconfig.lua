@@ -43,7 +43,7 @@ local on_attach = function(client, bufnr)
   imap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   nmap('<C-i>', function()
-    vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled())
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
   end, 'Inlay hint')
 
   -- Lesser used LSP functionality
