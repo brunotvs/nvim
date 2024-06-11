@@ -42,10 +42,9 @@ local on_attach = function(client, bufnr)
   nmap('<leader>k', vim.lsp.buf.hover, 'Hover Documentation')
   imap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
-  -- TODO: Enable for nvim 0.10
-  -- nmap('<C-i>', function()
-  --   vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled())
-  -- end, 'Inlay hint')
+  nmap('<C-i>', function()
+    vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled())
+  end, 'Inlay hint')
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
