@@ -5,6 +5,7 @@ return {
   -- See `:help lualine.txt`
   dependencies = {
     'catppuccin/nvim',
+    name = 'catppuccin',
   },
   opts = {
     options = {
