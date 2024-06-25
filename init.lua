@@ -30,7 +30,6 @@ function TableInsert(list, values)
 end
 
 LspServers = {
-  texlab = {},
   clangd = {},
 }
 

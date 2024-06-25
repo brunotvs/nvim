@@ -18,6 +18,7 @@ return {
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'phenax/cmp-graphql',
       'micangl/cmp-vimtex',
+
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
       {
@@ -82,22 +83,24 @@ return {
           end, { 'i', 's' }),
         }),
       })
+
       -- Set configuration for specific filetype.
       cmp.setup.filetype('gitcommit', {
-        sources = cmp.config.sources({
+        sources = {
           { name = 'conventionalcommits' },
           { name = 'git' },
           { name = 'buffer' },
-        }),
+        },
       })
 
       cmp.setup.filetype('tex', {
         sources = {
+          { name = 'luasnip' },
           { name = 'vimtex' },
           { name = 'buffer' },
-          -- other sources
         },
       })
+
       -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
       cmp.setup.cmdline({ '/', '?' }, {
         mapping = cmp.mapping.preset.cmdline(),
