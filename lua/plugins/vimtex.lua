@@ -1,7 +1,8 @@
 --- @type LazySpec
 return {
   'lervag/vimtex',
-  config = function()
+  lazy = false,
+  init = function()
     vim.g.vimtex_view_automatic = 1
 
     vim.g.vimtex_view_method = 'zathura'
@@ -17,4 +18,8 @@ return {
       end
     end
   end,
+
+  keys = {
+    { '<M-p>', '<cmd>VimtexTocToggle<cr>', desc = 'Vimtex: Document ToC' },
+  },
 }

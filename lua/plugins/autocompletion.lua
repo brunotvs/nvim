@@ -97,6 +97,8 @@ return {
         sources = {
           { name = 'luasnip' },
           { name = 'vimtex' },
+          { name = 'nvim_lsp' },
+          { name = 'path' },
           { name = 'buffer' },
         },
       })
