@@ -99,7 +99,7 @@ return {
           { name = 'vimtex' },
           { name = 'nvim_lsp' },
           { name = 'path' },
-          { name = 'buffer' },
+          { name = 'buffer', keyword_length = 3 },
         },
       })
 
