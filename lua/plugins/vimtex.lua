@@ -4,6 +4,7 @@ return {
   lazy = false,
   init = function()
     vim.g.vimtex_view_automatic = 1
+    vim.g.vimtex_quickfix_open_on_warning = 0
 
     vim.g.vimtex_view_method = 'zathura'
     if vim.fn.has('win32') == 1 or (vim.fn.has('unix') == 1 and vim.fn.exists('$WSLENV') == 1) then
