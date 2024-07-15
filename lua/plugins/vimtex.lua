@@ -21,6 +21,6 @@ return {
   end,
 
   keys = {
-    { '<M-c>', '<cmd>VimtexTocToggle<cr>', desc = 'Vimtex: Document ToC' },
+    { '<M-]>', '<cmd>VimtexTocToggle<cr>', desc = 'Vimtex: Document ToC' },
   },
 }
