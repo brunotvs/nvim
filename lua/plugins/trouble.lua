@@ -5,80 +5,41 @@ return {
     'nvim-tree/nvim-web-devicons',
     {
       'nvim-telescope/telescope.nvim',
-      -- opts = {
-      --   defaults = {
-      --     mappings = {
-      --       i = {
-      --         ['<c-t>'] = function()
-      --           require('trouble.providers.telescope').open_with_trouble()
-      --         end,
-      --       },
-      --       n = {
-      --         ['<c-t>'] = function()
-      --           require('trouble.providers.telescope').open_with_trouble()
-      --         end,
-      --       },
-      --     },
-      --   },
-      -- },
     },
   },
+  cmd = 'Trouble',
+  ---@class trouble.Config
+  opts = {},
   keys = {
     {
       '<leader>xx',
-      function()
-        require('trouble').toggle()
-      end,
+      '<cmd>Trouble diagnostics toggle<cr>',
       desc = 'Trouble: Toggle',
     },
     {
-      '<leader>xw',
-      function()
-        require('trouble').toggle('workspace_diagnostics')
-      end,
-      desc = 'Trouble: Workspace diagnostics',
-    },
-    {
       '<leader>xd',
-      function()
-        require('trouble').toggle('document_diagnostics')
-      end,
+      '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
       desc = 'Trouble: Document diagnostics',
     },
     {
       '<leader>xq',
-      function()
-        require('trouble').toggle('quickfix')
-      end,
+      '<cmd>Trouble qflist toggle<cr>',
       desc = 'Trouble: Quickfix',
     },
     {
       '<leader>xl',
-      function()
-        require('trouble').toggle('loclist')
-      end,
+      '<cmd>Trouble loclist toggle<cr>',
       desc = 'Trouble: Loclist',
     },
     {
       '<leader>xr',
-      function()
-        require('trouble').toggle('lsp_references')
-      end,
+      '<cmd>Trouble lsp toggle focus=false win.position=right<cr>',
       desc = 'Trouble: Lsp references',
     },
     {
-      ']x',
-      function()
-        require('trouble').next({ skip_groups = true, jump = true })
-      end,
-      desc = 'Trouble: jump next',
-    },
-    {
-      '[x',
-      function()
-        require('trouble').previous({ skip_groups = true, jump = true })
-      end,
-      desc = 'Trouble: jump previous',
+      '<M-o>',
+      '<cmd>Trouble symbols toggle focus=false<cr>',
+      desc = 'Trouble: symbols outline',
     },
   },
 }
