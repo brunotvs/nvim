@@ -17,6 +17,11 @@ return {
       desc = 'Trouble: Toggle',
     },
     {
+      '<leader>xe',
+      '<cmd>Trouble diagnostics filter.severity=vim.diagnostic.severity.ERROR<cr>',
+      desc = 'Trouble: Toggle',
+    },
+    {
       '<leader>xd',
       '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
       desc = 'Trouble: Document diagnostics',
