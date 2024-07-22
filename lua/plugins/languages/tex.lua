@@ -1,8 +1,22 @@
-TableInsert(LspServers, { texlab = {}, ltex = {
-  on_attach = function(client, bufnr)
-    require('ltex_extra').setup()
-  end,
-} })
+TableInsert(LspServers, {
+  texlab = {},
+  ltex = {
+    on_attach = function(client, bufnr)
+      require('ltex_extra').setup()
+    end,
+    settings = {
+      ltex = {
+        latex = {
+          commands = {
+            ['\\gls{}'] = 'default',
+            ['\\glsentryshort{}'] = 'default',
+            ['\\glsentrylong{}'] = 'default',
+          },
+        },
+      },
+    },
+  },
+})
 
 TableInsert(MasonEnsureInstalled, { 'latexindent' })
 
