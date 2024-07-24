@@ -42,7 +42,7 @@ local on_attach = function(client, bufnr)
   nmap('<leader>k', vim.lsp.buf.hover, 'Hover Documentation')
   imap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
-  nmap('<C-i>', function()
+  nmap('<A-i>', function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
   end, 'Inlay hint')
 
