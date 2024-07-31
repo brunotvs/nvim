@@ -17,6 +17,26 @@ local select_one_or_multi = function(prompt_bufnr)
   require('telescope.actions').select_default(prompt_bufnr)
 end
 
+-- basic telescope configuration
+local function toggle_telescope(harpoon_files)
+  local conf = require('telescope.config').values
+  local file_paths = {}
+  for _, item in ipairs(harpoon_files.items) do
+    table.insert(file_paths, item.value)
+  end
+
+  require('telescope.pickers')
+    .new({}, {
+      prompt_title = 'Harpoon',
+      finder = require('telescope.finders').new_table({
+        results = file_paths,
+      }),
+      previewer = conf.file_previewer({}),
+      sorter = conf.generic_sorter({}),
+    })
+    :find()
+end
+
 --- @type LazySpec
 return {
   'ThePrimeagen/harpoon',
@@ -50,9 +70,16 @@ return {
       desc = 'Harpoon: Toggle menu',
     },
     {
+      '<leader>ht',
+      function()
+        toggle_telescope(require('harpoon'):list())
+      end,
+      desc = 'Harpoon: Harpoon telescope',
+    },
+    {
       '<leader>ha',
       function()
-        require('harpoon'):list():append()
+        require('harpoon'):list():add()
       end,
       desc = 'Harpoon: Add file',
     },
