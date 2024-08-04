@@ -46,5 +46,19 @@ return {
       '<cmd>Trouble symbols toggle focus=false<cr>',
       desc = 'Trouble: symbols outline',
     },
+    {
+      '[x',
+      function()
+        require('trouble').prev()
+        require('trouble').jump()
+      end,
+    },
+    {
+      ']x',
+      function()
+        require('trouble').next()
+        require('trouble').jump()
+      end,
+    },
   },
 }
