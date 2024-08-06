@@ -22,12 +22,12 @@ return {
       desc = "Trouble: Todo/Fix/Fixme",
     },
     {
-      "<leader>st",
+      "<leader>ft",
       "<cmd>TodoTelescope<cr>",
       desc = "Trouble: Todo",
     },
     {
-      "<leader>sT",
+      "<leader>fT",
       "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>",
       desc = "Trouble: Todo/Fix/Fixme",
     },
