@@ -40,11 +40,12 @@ vim.keymap.set('n', '<leader>bod', function()
     local listed = vim.fn.buflisted(bufnr) == 1
     if listed and bufnr ~= current_buffer then
       count = count + 1
-      vim.lsp.for_each_buffer_client(bufnr, function(client, client_id, buf_id)
-        if not vim.lsp.buf_is_attached(current_buffer, client_id) then
-          vim.lsp.stop_client(client_id)
+      local clients = vim.lsp.get_clients({ bufnr = bufnr })
+      for _, client in ipairs(clients) do
+        if not vim.lsp.buf_is_attached(current_buffer, client.id) then
+          vim.lsp.stop_client(client.id)
         end
-      end)
+      end
       vim.cmd.bdelete(bufnr)
     end
   end
