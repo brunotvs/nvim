@@ -1,5 +1,13 @@
 TableInsert(LspServers, {
-  texlab = {},
+  texlab = {
+    settings = {
+      texlab = {
+        experimental = {
+          labelReferenceCommands = { 'nameref' },
+        },
+      },
+    },
+  },
   ltex = {
     on_attach = function(client, bufnr)
       require('ltex_extra').setup()
