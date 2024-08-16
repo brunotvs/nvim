@@ -32,15 +32,31 @@ return {
     on_attach = function(bufnr)
       vim.keymap.set('n', '[g', require('gitsigns').prev_hunk, {
         buffer = bufnr,
-        desc = '[G]o to [P]revious Hunk',
+        desc = 'Gitsings: [G]o to [P]revious Hunk',
       })
       vim.keymap.set('n', ']g', require('gitsigns').next_hunk, {
         buffer = bufnr,
-        desc = '[G]o to [N]ext Hunk',
+        desc = 'Gitsings: [G]o to [N]ext Hunk',
       })
-      vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, {
+      vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk_inline, {
         buffer = bufnr,
-        desc = '[P]review [H]unk',
+        desc = 'Gitsings: [P]review [H]unk inline',
+      })
+      vim.keymap.set('n', '<leader>hP', require('gitsigns').preview_hunk, {
+        buffer = bufnr,
+        desc = 'Gitsings: [P]review [H]unk',
+      })
+      vim.keymap.set('n', '<leader>hr', require('gitsigns').reset_hunk, {
+        buffer = bufnr,
+        desc = 'Gitsings: [H]unk [R]eset',
+      })
+      vim.keymap.set('n', '<leader>hs', require('gitsigns').stage_hunk, {
+        buffer = bufnr,
+        desc = 'Gitsings: [H]unk [S]stage',
+      })
+      vim.keymap.set('n', '<leader>hu', require('gitsigns').undo_stage_hunk, {
+        buffer = bufnr,
+        desc = 'Gitsings: [H]unk [U]nstage',
       })
     end,
   },
