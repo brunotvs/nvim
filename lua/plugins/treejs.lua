@@ -5,9 +5,6 @@ return {
   opts = {
     use_default_keymaps = false,
   },
-  config = function(_, opts)
-    require('treesj').setup({ opts })
-  end,
   keys = {
     {
       '<leader>bt',
