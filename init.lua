@@ -51,10 +51,6 @@ NeotestAdapters = {}
 AdditionalOnAttachFunctions = {}
 
 require('config.lazy')
-require('config.highlight-on-yank')
-require('config.keymaps')
-require('config.options')
-require('config.commands')
 
 require('secrets.secrets')
 
