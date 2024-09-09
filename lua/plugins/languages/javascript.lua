@@ -4,7 +4,7 @@ TableInsert(LspServers, {
       return require('lspconfig.util').root_pattern('angular.json', 'project.json')(fname)
     end,
   },
-  tsserver = {
+  ts_ls = {
     init_options = {
       preferences = {
         includeInlayParameterNameHints = 'all',
