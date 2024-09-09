@@ -31,6 +31,7 @@ end
 
 LspServers = {
   clangd = {},
+  vimls = {},
 }
 
 ---@type string[]
