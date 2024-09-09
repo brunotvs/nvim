@@ -1,2 +1,2 @@
 --- @type LazySpec
-return { 'tpope/vim-surround' }
+return { 'brunotvs/vim-surround' }
