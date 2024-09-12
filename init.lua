@@ -32,6 +32,7 @@ end
 LspServers = {
   clangd = {},
   vimls = {},
+  perlnavigator = {},
 }
 
 ---@type string[]
