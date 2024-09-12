@@ -4,7 +4,9 @@ return {
   'folke/which-key.nvim',
   event = 'VeryLazy',
 
-  opts = { triggers = {
-    { '<space>', mode = {} },
-  } },
+  opts = {
+    triggers = {
+      { '<space>', mode = {} },
+    },
+  },
 }
