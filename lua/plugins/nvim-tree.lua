@@ -33,7 +33,7 @@ return {
         api.tree.open({ focus = true })
         vim.cmd.only()
       end,
-      desc = 'NvimTree: Toggle',
+      desc = 'NvimTree: Toggle file full window',
       mode = { 'n', 'v' },
     },
     { '<M-f>', vim.cmd.NvimTreeFindFileToggle, desc = 'NvimTree: Toggle file', mode = { 'n', 'v' } },
@@ -45,7 +45,7 @@ return {
         api.tree.focus()
         vim.cmd.only()
       end,
-      desc = 'NvimTree: Toggle',
+      desc = 'NvimTree: Toggle file full window',
       mode = { 'n', 'v' },
     },
   },
