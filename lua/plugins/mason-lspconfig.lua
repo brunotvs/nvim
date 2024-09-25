@@ -54,8 +54,9 @@ local function on_attach(client, bufnr)
     vim.lsp.buf.list_workspace_folders()
   end, '[W]orkspace [L]ist Folders')
 
-  local clientName = client.name
-  pcall(LspServers[clientName]['on_attach'], client, bufnr)
+  local client_name = client.name
+  local server_config = LspServers[client_name] or {}
+  pcall(server_config['on_attach'], client, bufnr)
 
   for _, f in ipairs(AdditionalOnAttachFunctions) do
     f(client, bufnr)
