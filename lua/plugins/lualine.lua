@@ -1,3 +1,7 @@
+BuildStatus = {
+  building = {},
+  icon = '',
+}
 --- @type LazySpec
 return {
   -- Set lualine as statusline
@@ -23,6 +27,18 @@ return {
           require('lazy.status').updates,
           cond = require('lazy.status').has_updates,
           color = { fg = '#ff9e64' },
+        },
+        {
+          function()
+            return BuildStatus.icon
+          end,
+          cond = function()
+            local count = 0
+            for _ in pairs(BuildStatus.building) do
+              count = count + 1
+            end
+            return count ~= 0
+          end,
         },
       },
       lualine_c = {
