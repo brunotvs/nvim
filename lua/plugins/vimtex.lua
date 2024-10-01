@@ -1,3 +1,21 @@
+local vimtex_events = vim.api.nvim_create_augroup('vimtex_events', {})
+
+vim.api.nvim_create_autocmd('User', {
+  pattern = { 'VimtexEventCompileStarted', 'VimtexEventCompiling' },
+  group = vimtex_events,
+  callback = function()
+    BuildStatus.building['vimtex'] = true
+  end,
+})
+
+vim.api.nvim_create_autocmd('User', {
+  pattern = { 'VimtexEventCompileStopped', 'VimtexEventCompileSuccess', 'VimtexEventCompileFailed' },
+  group = vimtex_events,
+  callback = function()
+    BuildStatus.building['vimtex'] = nil
+  end,
+})
+
 --- @type LazySpec
 return {
   'lervag/vimtex',
