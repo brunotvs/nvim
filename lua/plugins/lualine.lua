@@ -1,6 +1,6 @@
 BuildStatus = {
   building = {},
-  icon = '',
+  icon = ' ',
 }
 --- @type LazySpec
 return {
@@ -39,6 +39,7 @@ return {
             end
             return count ~= 0
           end,
+          color = { fg = '#ff9e64' },
         },
       },
       lualine_c = {
