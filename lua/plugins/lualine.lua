@@ -1,6 +1,6 @@
 BuildStatus = {
   building = {},
-  icon = ' ',
+  icon = '',
 }
 --- @type LazySpec
 return {
