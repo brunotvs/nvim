@@ -1,6 +1,6 @@
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
-local function on_attach(client, bufnr)
+function OnAttach(client, bufnr)
   -- NOTE: Remember that lua is a real programming language, and as such it is possible
   -- to define small helper and utility functions so you don't have to repeat yourself
   -- many times.
@@ -63,15 +63,6 @@ local function on_attach(client, bufnr)
   end
 end
 
---- @type rustaceanvim.Opts
----NOTE: for rustaceanvim lsp implementation
-vim.g.rustaceanvim = {
-  --- @type rustaceanvim.lsp.ClientOpts
-  server = {
-    on_attach = on_attach,
-  },
-}
-
 --- @type LazySpec
 return {
   {
@@ -103,7 +94,7 @@ return {
             vim.cmd.LspUninstall(server_name)
             return
           end
-          local opts = { on_attach = on_attach, capabilities = capabilities }
+          local opts = { on_attach = OnAttach, capabilities = capabilities }
 
           for key, value in pairs(LspServers[server_name]) do
             if key ~= 'on_attach' then
