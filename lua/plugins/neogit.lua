@@ -8,5 +8,21 @@ return {
     -- Only one of these is needed, not both.
     'nvim-telescope/telescope.nvim', -- optional
   },
-  config = true,
+  --- @type NeogitConfig
+  opts = {
+    integrations = {
+      telescope = true,
+      diffview = true,
+    },
+  },
+  keys = {
+    {
+      '<leader>ng',
+      function()
+        require('neogit').open()
+      end,
+      desc = 'Neogit: Open',
+      mode = { 'n' },
+    },
+  },
 }
