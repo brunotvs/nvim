@@ -45,6 +45,9 @@ function OnAttach(client, bufnr)
   nmap('<A-i>', function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
   end, 'Inlay hint')
+  imap('<A-i>', function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  end, 'Inlay hint')
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
