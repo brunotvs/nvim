@@ -6,7 +6,10 @@ TableInsert(MasonEnsureInstalled, { 'codelldb' })
 vim.g.rustaceanvim = {
   --- @type rustaceanvim.lsp.ClientOpts
   server = {
-    on_attach = OnAttach,
+    on_attach = function(client, bufnr)
+      OnAttach(client, bufnr)
+    end,
+    vim.keymap.set('n', '<leader>me', ':RustLsp expandMacro<CR>', { desc = 'Expand rust macro' }),
   },
 }
 
