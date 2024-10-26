@@ -5,13 +5,6 @@ return {
     config = function() end,
     keys = {
       {
-        '<F5>',
-        function()
-          require('dap').continue()
-        end,
-        desc = 'Debug: Start/Continue',
-      },
-      {
         '<F1>',
         function()
           require('dap').step_into()
@@ -31,6 +24,20 @@ return {
           require('dap').step_out()
         end,
         desc = 'Debug: Step Out',
+      },
+      {
+        '<F5>',
+        function()
+          require('dap').continue()
+        end,
+        desc = 'Debug: Start/Continue',
+      },
+      {
+        '<s-F5>',
+        function()
+          require('dap').disconnect()
+        end,
+        desc = 'Debug: Disconnect',
       },
       {
         '<leader>db',
