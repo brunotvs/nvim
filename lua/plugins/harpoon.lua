@@ -126,7 +126,7 @@ return {
       desc = 'Harpoon: Next list item',
     },
     {
-      ']h',
+      '[h',
       function()
         require('harpoon'):list():prev()
       end,
