@@ -9,6 +9,15 @@ return {
       'regex',
     },
     delay = 100,
+    filetype_overrides = {
+      tex = {
+        providers = {
+          'regex',
+          'lsp',
+          'treesitter',
+        },
+      },
+    },
     filetypes_denylist = {
       'dirbuf',
       'dirvish',
@@ -18,6 +27,10 @@ return {
     },
   },
   config = function(_, opts)
-    require('illuminate').configure(opts)
+    local i = require('illuminate')
+    i.configure(opts)
+    vim.keymap.set('n', '<M-N>', function()
+      i.goto_prev_reference(true)
+    end, { desc = 'Illuminate previous' })
   end,
 }
