@@ -66,6 +66,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Yank to OS register
 vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'Yank until end of line to OS register' })
 
 vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete without copying to register' })
+vim.keymap.set({ 'n', 'v' }, '<leader>D', [["_D]], { desc = 'Delete until end of line without copying to register' })
 
 -- This is going to get me cancelled
 vim.keymap.set('i', '<C-c>', '<Esc>')
