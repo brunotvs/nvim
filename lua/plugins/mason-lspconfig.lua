@@ -25,6 +25,9 @@ function OnAttach(client, bufnr)
   local imap = function(keys, func, desc)
     map('i', keys, func, desc)
   end
+  local vmap = function(keys, func, desc)
+    map('v', keys, func, desc)
+  end
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
@@ -43,6 +46,9 @@ function OnAttach(client, bufnr)
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
   end, 'Inlay hint')
   imap('<A-i>', function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  end, 'Inlay hint')
+  vmap('<A-i>', function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
   end, 'Inlay hint')
 
