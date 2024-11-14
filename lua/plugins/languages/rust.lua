@@ -8,8 +8,17 @@ vim.g.rustaceanvim = {
   server = {
     on_attach = function(client, bufnr)
       OnAttach(client, bufnr)
+      vim.keymap.set('n', '<leader>me', ':RustLsp expandMacro<CR>', { desc = 'Expand rust macro' })
     end,
-    vim.keymap.set('n', '<leader>me', ':RustLsp expandMacro<CR>', { desc = 'Expand rust macro' }),
+    default_settings = {
+      ['rust-analyzer'] = {
+        runnables = {
+          extraTestBinaryArgs = {
+            '--nocapture',
+          },
+        },
+      },
+    },
   },
 }
 
