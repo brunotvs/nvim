@@ -23,6 +23,7 @@ return {
       'nvim-neotest/neotest',
     },
     init = function()
+      ---@diagnostic disable-next-line: missing-fields
       require('neotest').setup({
         adapters = {
           require('rustaceanvim.neotest'),

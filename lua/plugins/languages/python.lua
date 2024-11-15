@@ -12,7 +12,7 @@ return {
       'mfussenegger/nvim-dap',
       'williamboman/mason.nvim',
     },
-    init = function(_)
+    init = function()
       local mason_registry = require('mason-registry')
       local debugpy = mason_registry.get_package('debugpy')
       local path = debugpy:get_install_path()
