@@ -16,9 +16,8 @@ TableInsert(LspServers, {
       ltex = {
         latex = {
           commands = {
-            ['\\gls{}'] = 'default',
-            ['\\glsentryshort{}'] = 'default',
-            ['\\glsentrylong{}'] = 'default',
+            ['\\listof{}'] = 'ignore',
+            ['\\author{}'] = 'ignore',
           },
         },
       },
