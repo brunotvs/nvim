@@ -55,7 +55,11 @@ AdditionalOnAttachFunctions = {}
 
 require('config.lazy')
 
-require('secrets.secrets')
+local exists, _ = pcall(require, 'secrets.secrets')
+
+if exists then
+  vim.notify_once('Secrets file not created', vim.log.levels.WARN)
+end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
