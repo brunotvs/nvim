@@ -57,7 +57,7 @@ require('config.lazy')
 
 local exists, _ = pcall(require, 'secrets.secrets')
 
-if exists then
+if not exists then
   vim.notify_once('Secrets file not created', vim.log.levels.WARN)
 end
 
