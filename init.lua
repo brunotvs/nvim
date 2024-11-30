@@ -34,6 +34,7 @@ LspServers = {
   vimls = {},
   perlnavigator = {},
   taplo = {},
+  gopls = {},
 }
 
 ---@type string[]
@@ -46,6 +47,7 @@ TreesitterEnsureInstalled = {
   'vim',
   'markdown',
   'markdown_inline',
+  'go',
 }
 ---@type string[]
 NeotestAdapters = {}
