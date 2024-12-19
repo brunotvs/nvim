@@ -7,4 +7,5 @@ return {
       types = true,
     },
   },
+  enabled = false,
 }

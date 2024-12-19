@@ -20,7 +20,7 @@ function FilterServers(client)
 end
 
 ---@param list table
----@param values List
+---@param values any[]
 function TableInsert(list, values)
   for key, value in pairs(values) do
     local list_len = #list

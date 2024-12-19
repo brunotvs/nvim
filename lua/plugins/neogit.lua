@@ -1,3 +1,4 @@
+--- @module "neogit"
 --- @type LazySpec
 return {
   'NeogitOrg/neogit',

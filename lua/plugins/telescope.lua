@@ -12,10 +12,10 @@ return {
   'nvim-telescope/telescope.nvim',
   branch = '0.1.x',
   dependencies = { 'nvim-lua/plenary.nvim' },
+  --- @module "telescope"
   opts = {
     defaults = { file_ignore_patterns = { 'node_modules' } },
   },
-  init = function(_) end,
   keys = {
     {
       '<leader>?',
@@ -83,6 +83,13 @@ return {
         require('telescope.builtin').diagnostics()
       end,
       desc = '[S]earch [D]iagnostics',
+    },
+    {
+      '<leader>sc',
+      function()
+        require('telescope.builtin').find_files({ cwd = vim.fn.stdpath('config') })
+      end,
+      desc = '[S]earch [C]onfig',
     },
   },
 }

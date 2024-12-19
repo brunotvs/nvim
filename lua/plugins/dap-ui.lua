@@ -1,3 +1,4 @@
+---@module "dapui"
 --- @type table<string,dapui.Config.layout[]>
 local named_layouts = {
   Default = {

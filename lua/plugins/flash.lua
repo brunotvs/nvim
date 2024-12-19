@@ -1,3 +1,4 @@
+---@module "flash"
 --- @type LazySpec
 return {
   'folke/flash.nvim',
