@@ -85,7 +85,7 @@ return {
       desc = '[S]earch [D]iagnostics',
     },
     {
-      '<leader>sc',
+      '<leader>sn',
       function()
         require('telescope.builtin').find_files({ cwd = vim.fn.stdpath('config') })
       end,
