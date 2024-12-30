@@ -3,8 +3,13 @@
 return {
   'williamboman/mason.nvim',
   build = ':MasonUpdate',
+  ---@type MasonSettings
   opts = {
     ensure_installed = MasonEnsureInstalled,
+    registries = {
+      'github:mason-org/mason-registry',
+      'github:brunotvs/lua-dap-mason-registry',
+    },
   },
   ---@param opts MasonSettings | { ensure_installed: string[] }
   config = function(_, opts)
