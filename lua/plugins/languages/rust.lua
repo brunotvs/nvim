@@ -1,5 +1,6 @@
 TableInsert(TreesitterEnsureInstalled, { 'rust' })
 TableInsert(MasonEnsureInstalled, { 'codelldb' })
+TableInsert(NeotestAdapters, { ['rustaceanvim.neotest'] = {} })
 
 --- @type rustaceanvim.Opts
 ---NOTE: for rustaceanvim lsp implementation
@@ -31,13 +32,5 @@ return {
     dependecies = {
       'nvim-neotest/neotest',
     },
-    init = function()
-      ---@diagnostic disable-next-line: missing-fields
-      require('neotest').setup({
-        adapters = {
-          require('rustaceanvim.neotest'),
-        },
-      })
-    end,
   },
 }
