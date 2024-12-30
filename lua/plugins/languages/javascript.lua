@@ -121,7 +121,7 @@ return {
       formatters = {
         eslint_lsp = {
           name = 'eslint',
-          execute = function(config, opts, callback)
+          execute = function(config, _, callback)
             local options = { name = config.name }
 
             local lsp_format = require('conform.lsp_format')
