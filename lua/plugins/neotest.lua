@@ -8,27 +8,14 @@ return {
     'folke/trouble.nvim',
     'nvim-neotest/nvim-nio',
   },
+  url = 'https://github.com/brunotvs/neotest.git',
+  dev = true,
   opts = {
-    -- Can be a list of adapters like what neotest expects,
-    -- or a list of adapter names,
-    -- or a table of adapter names, mapped to adapter configs.
-    -- The adapter will then be automatically loaded with the config.
     adapters = NeotestAdapters,
-    -- Example for loading neotest-go with a custom config
-    -- adapters = {
-    --   ["neotest-go"] = {
-    --     args = { "-tags=integration" },
-    --   },
-    -- },
     status = { virtual_text = true },
     output = { open_on_run = true },
-    quickfix = {
-      open = function()
-        vim.cmd('Trouble quickfix')
-      end,
-    },
   },
-  config = function(_, opts)
+  init = function()
     local neotest_ns = vim.api.nvim_create_namespace('neotest')
     vim.diagnostic.config({
       virtual_text = {
@@ -39,7 +26,8 @@ return {
         end,
       },
     }, neotest_ns)
-
+  end,
+  config = function(_, opts)
     if opts.adapters then
       local adapters = {}
       for name, config in pairs(opts.adapters or {}) do
@@ -47,7 +35,7 @@ return {
           if type(config) == 'string' then
             config = require(config)
           end
-          adapters[#adapters + 1] = config
+          vim.list_extend(adapters, config)
         elseif config ~= false then
           local adapter = require(name)
           if type(config) == 'table' and not vim.tbl_isempty(config) then
