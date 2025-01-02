@@ -24,9 +24,7 @@ return {
       {
         'davidsierradz/cmp-conventionalcommits',
         url = 'https://github.com/brunotvs/cmp-conventionalcommits.git',
-        config = function(_, opts)
-          require('cmp-conventionalcommits').setup(opts)
-        end,
+        opts = {},
       },
     },
     config = function()

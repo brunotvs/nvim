@@ -2,7 +2,7 @@
 return {
   {
     'mfussenegger/nvim-dap',
-    config = function() end,
+    opts = {},
     keys = {
       {
         '<F1>',
@@ -61,12 +61,10 @@ return {
       'mfussenegger/nvim-dap',
       'williamboman/mason.nvim',
     },
+    main = 'mason-nvim-dap',
     opts = {
       automatic_setup = true,
       handlers = {},
     },
-    config = function(_, opts)
-      require('mason-nvim-dap').setup(opts)
-    end,
   },
 }

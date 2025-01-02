@@ -66,8 +66,7 @@ return {
       which_key = true,
     },
   },
-  config = function(_, opts)
-    require('catppuccin').setup(opts)
+  init = function()
     vim.cmd.colorscheme('catppuccin')
   end,
 }

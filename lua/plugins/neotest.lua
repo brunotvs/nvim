@@ -8,7 +8,6 @@ return {
     'folke/trouble.nvim',
     'nvim-neotest/nvim-nio',
   },
-  url = 'https://github.com/brunotvs/neotest.git',
   dev = true,
   opts = {
     adapters = NeotestAdapters,
@@ -104,6 +103,13 @@ return {
       '<leader>tS',
       function()
         require('neotest').run.stop()
+      end,
+      desc = 'Neotest: Stop',
+    },
+    {
+      '<leader>dt',
+      function()
+        require('neotest').run.run({ strategy = 'dap' })
       end,
       desc = 'Neotest: Stop',
     },
