@@ -8,7 +8,6 @@ return {
     'folke/trouble.nvim',
     'nvim-neotest/nvim-nio',
   },
-  dev = true,
   opts = {
     adapters = NeotestAdapters,
     status = { virtual_text = true },
