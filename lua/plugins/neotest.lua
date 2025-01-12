@@ -63,6 +63,13 @@ return {
       desc = 'Neotest: Run File',
     },
     {
+      '<leader>tw',
+      function()
+        require('neotest').watch.toggle()
+      end,
+      desc = 'Neotest: watch nearest',
+    },
+    {
       '<leader>tT',
       function()
         require('neotest').run.run(vim.loop.cwd())
