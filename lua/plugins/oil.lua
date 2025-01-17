@@ -4,15 +4,7 @@ return {
   'stevearc/oil.nvim',
   ---@type oil.SetupOpts
   opts = {
-    columns = {
-      'icon',
-      -- 'permissions',
-      -- 'size',
-      -- 'mtime',
-    },
     view_options = {
-
-      -- Show files and directories that start with "."
       show_hidden = true,
     },
   },
