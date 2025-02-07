@@ -70,7 +70,7 @@ return {
       desc = 'Neotest: watch nearest',
     },
     {
-      '<leader>tT',
+      '<leader>ta',
       function()
         require('neotest').run.run(vim.loop.cwd())
       end,
