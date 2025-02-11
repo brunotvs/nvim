@@ -33,6 +33,13 @@ return {
   },
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   keys = {
-    { '-', ':Oil<CR>', desc = 'Oil parent directory' },
+    { '-', '<CMD>Oil<CR>', desc = 'Oil parent directory' },
+    {
+      '<leader>-',
+      function()
+        require('oil').toggle_float()
+      end,
+      desc = 'Oil parent directory',
+    },
   },
 }
