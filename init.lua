@@ -48,6 +48,7 @@ TreesitterEnsureInstalled = {
   'markdown',
   'markdown_inline',
   'go',
+  'toml',
 }
 ---@type string[]
 NeotestAdapters = {}
