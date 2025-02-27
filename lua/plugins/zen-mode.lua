@@ -9,15 +9,29 @@ return {
     },
   },
   keys = {
-    { '<leader>zz', '<cmd>ZenMode<CR>', desc = 'Zen: Toggle zen mode' },
+    {
+      '<leader>zz',
+      function()
+        ---@type ZenOptions
+        local opts = {
+          window = {
+            width = 130, -- width will be 50% of the editor width
+          },
+        }
+        require('zen-mode').toggle(opts)
+      end,
+      desc = 'Zen: Toggle zen mode',
+    },
     {
       '<leader>zt',
       function()
-        require('zen-mode').toggle({
+        ---@type ZenOptions
+        local opts = {
           window = {
             width = 100, -- width will be 50% of the editor width
           },
-        })
+        }
+        require('zen-mode').toggle(opts)
       end,
       desc = 'Zen: Toggle zen mode',
     },
