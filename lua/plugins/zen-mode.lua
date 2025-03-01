@@ -1,10 +1,17 @@
 --- @type LazySpec
 return {
   'folke/zen-mode.nvim',
+  ---@type ZenOptions
   opts = {
     window = {
       options = {
-        foldcolumn = '0',
+        signcolumn = 'no', -- disable signcolumn
+        -- number = false, -- disable number column
+        -- relativenumber = false, -- disable relative numbers
+        cursorline = false, -- disable cursorline
+        cursorcolumn = false, -- disable cursor column
+        foldcolumn = '0', -- disable fold column
+        list = false, -- disable whitespace characters
       },
     },
   },
@@ -29,6 +36,10 @@ return {
         local opts = {
           window = {
             width = 100, -- width will be 50% of the editor width
+            options = {
+              number = false,
+              relativenumber = false,
+            },
           },
         }
         require('zen-mode').toggle(opts)
