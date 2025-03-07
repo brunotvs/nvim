@@ -72,7 +72,7 @@ return {
       desc = 'Harpoon: Toggle menu',
     },
     {
-      '<leader>hs',
+      '<leader>hf',
       function()
         toggle_telescope(require('harpoon'):list())
       end,
