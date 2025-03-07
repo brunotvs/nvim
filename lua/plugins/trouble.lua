@@ -37,6 +37,11 @@ return {
       desc = 'Trouble: Quickfix',
     },
     {
+      '<leader>xQ',
+      '<cmd>Trouble qflist toggle win.position=right win.size=.3<cr>',
+      desc = 'Trouble: Quickfix',
+    },
+    {
       '<leader>xl',
       '<cmd>Trouble loclist toggle<cr>',
       desc = 'Trouble: Loclist',
