@@ -6,7 +6,30 @@ return {
     commands = true,
   },
   keys = {
-    { '<leader>cl', vim.cmd.CoverageLoad, desc = 'Coverage: Load' },
-    { '<leader>ct', vim.cmd.CoverageToggle, desc = 'Coverage: Toggle' },
+
+    {
+      '<leader>cl',
+      function()
+        local coverage = require('coverage')
+        coverage.load(false)
+      end,
+      desc = 'Coverage: Summary',
+    },
+    {
+      '<leader>cs',
+      function()
+        local coverage = require('coverage')
+        coverage.summary()
+      end,
+      desc = 'Coverage: Summary',
+    },
+    {
+      '<leader>ct',
+      function()
+        local coverage = require('coverage')
+        coverage.toggle()
+      end,
+      desc = 'Coverage: Toggle',
+    },
   },
 }
