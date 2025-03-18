@@ -4,6 +4,18 @@ return {
   dependencies = { 'nvim-lua/plenary.nvim' },
   opts = {
     commands = true,
+    auto_reload = true,
+    highlights = {
+      covered = { fg = '#a6e3a1' },
+      uncovered = { fg = '#f38ba8' },
+      partial = { fg = '#f5e0dc' },
+    },
+    summary = {
+      window = {
+        winblend = 0,
+        -- percentage = 0,
+      },
+    },
   },
   keys = {
 
