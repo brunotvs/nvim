@@ -1,7 +1,12 @@
 --- @type LazySpec
 return {
   'rbong/vim-flog',
-  cmd = 'Flog',
+  enabled = false,
+  dependencies = {
+    'tpope/vim-fugitive',
+  },
+  lazy = true,
+  cmd = { 'Flog', 'Flogsplit', 'Floggit' },
   keys = {
     { '<leader>gb', '<cmd>Flog<CR>', desc = 'Flog: Git branches' },
   },
