@@ -43,5 +43,53 @@ return {
       end,
       desc = 'Coverage: Toggle',
     },
+    {
+      ']cc',
+      function()
+        local coverage = require('coverage')
+        coverage.jump_next('covered')
+      end,
+      desc = 'Coverage: jump next covered',
+    },
+    {
+      '[cc',
+      function()
+        local coverage = require('coverage')
+        coverage.jump_prev('covered')
+      end,
+      desc = 'Coverage: jump previous covered',
+    },
+    {
+      ']cu',
+      function()
+        local coverage = require('coverage')
+        coverage.jump_next('uncovered')
+      end,
+      desc = 'Coverage: jump next uncovered',
+    },
+    {
+      '[cu',
+      function()
+        local coverage = require('coverage')
+        coverage.jump_prev('uncovered')
+      end,
+      desc = 'Coverage: jump previous uncovered',
+    },
+    {
+      ']cp',
+      function()
+        local coverage = require('coverage')
+        coverage.jump_next('partial')
+      end,
+      desc = 'Coverage: jump next partial',
+    },
+    {
+      '[cp',
+      function()
+        local coverage = require('coverage')
+        coverage.jump_prev('partial')
+      end,
+      desc = 'Coverage: jump previous partial',
+    },
   },
 }
