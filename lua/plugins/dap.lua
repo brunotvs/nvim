@@ -53,6 +53,13 @@ return {
         end,
         desc = 'Debug: Set Breakpoint',
       },
+      {
+        '<leader>dl',
+        function()
+          require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
+        end,
+        desc = 'Debug: Set Breakpoint',
+      },
     },
   },
   {
