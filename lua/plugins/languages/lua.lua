@@ -65,7 +65,6 @@ return {
   {
     'brunotvs/neotest-busted',
     ft = 'lua',
-    dev = true,
     dependencies = {
       'nvim-neotest/neotest',
     },
