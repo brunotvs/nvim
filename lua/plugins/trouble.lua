@@ -70,5 +70,9 @@ return {
         require('trouble').jump()
       end,
     },
+    {
+      '<leader>E',
+      '<cmd>Trouble qflist toggle win.position=right win.size=.3 filter.buf=0 filter.range=true<cr>',
+    },
   },
 }

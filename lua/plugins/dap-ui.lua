@@ -35,12 +35,5 @@ return {
       end,
       desc = 'Debug: See last session result',
     },
-    {
-      '<M-k>',
-      function()
-        require('dapui').eval()
-      end,
-      desc = 'Debug: Set Breakpoint',
-    },
   },
 }

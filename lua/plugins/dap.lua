@@ -60,6 +60,13 @@ return {
         end,
         desc = 'Debug: Set Breakpoint',
       },
+      {
+        '<M-k>',
+        function()
+          require('dap.ui.widgets').hover()
+        end,
+        desc = 'Debug: hover',
+      },
     },
   },
   {
