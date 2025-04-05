@@ -1,6 +1,7 @@
 --- @type LazySpec
 return {
   'nvim-neotest/neotest',
+  dev = true,
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-treesitter/nvim-treesitter',
@@ -63,6 +64,13 @@ return {
       desc = 'Neotest: Run File',
     },
     {
+      '<leader>tl',
+      function()
+        require('neotest').run.run_last()
+      end,
+      desc = 'Neotest: Run last',
+    },
+    {
       '<leader>tw',
       function()
         require('neotest').watch.toggle()
@@ -72,14 +80,24 @@ return {
     {
       '<leader>ta',
       function()
-        require('neotest').run.run(vim.loop.cwd())
+        require('neotest').run.run({ suite = true })
       end,
       desc = 'Neotest: Run All Test Files',
     },
     {
       '<leader>tr',
       function()
-        require('neotest').run.run()
+        local neotest = require('neotest')
+        ---@type neotest.run.RunArgs
+        local args = { strategy = 'integrated', suite = false }
+
+        ---@diagnostic disable-next-line: invisible
+        local tree = neotest.run.get_tree_from_args(args, true)
+        if tree then
+          neotest.run.run(args)
+          return
+        end
+        neotest.run.run_last(args)
       end,
       desc = 'Neotest: Run Nearest',
     },
@@ -115,9 +133,19 @@ return {
     {
       '<leader>dt',
       function()
-        require('neotest').run.run({ strategy = 'dap' })
+        local neotest = require('neotest')
+        ---@type neotest.run.RunArgs
+        local args = { strategy = 'dap', suite = false }
+
+        ---@diagnostic disable-next-line: invisible
+        local tree = neotest.run.get_tree_from_args(args, true)
+        if tree then
+          neotest.run.run(args)
+          return
+        end
+        neotest.run.run_last(args)
       end,
-      desc = 'Neotest: Stop',
+      desc = 'Neotest: debug nearest or last',
     },
   },
 }
