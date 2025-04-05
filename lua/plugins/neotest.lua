@@ -102,6 +102,14 @@ return {
       desc = 'Neotest: Run Nearest',
     },
     {
+      '<leader>tR',
+      function()
+        local neotest = require('neotest')
+        neotest.summary.run_marked()
+      end,
+      desc = 'Neotest: Run marked',
+    },
+    {
       '<M-t>',
       function()
         require('neotest').summary.toggle()
