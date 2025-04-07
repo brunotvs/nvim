@@ -78,6 +78,13 @@ return {
       desc = 'Neotest: watch nearest',
     },
     {
+      '<leader>tW',
+      function()
+        require('neotest').watch.stop_all()
+      end,
+      desc = 'Neotest: stop all watchers',
+    },
+    {
       '<leader>ta',
       function()
         require('neotest').run.run({ suite = true })
