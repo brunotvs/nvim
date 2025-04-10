@@ -13,46 +13,183 @@ return {
   keys = {
     {
       '<leader>xx',
-      '<cmd>Trouble diagnostics toggle<cr>',
+      function()
+        local trouble = require('trouble.api')
+
+        ---@diagnostic disable-next-line: missing-fields
+        trouble.toggle({
+          mode = 'diagnostics',
+          open_no_results = true,
+        })
+      end,
       desc = 'Trouble: Toggle',
     },
     {
-      '<leader>xb',
-      '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
-      desc = 'Trouble: Toggle',
+      '<leader>xxb',
+      function()
+        local trouble = require('trouble.api')
+
+        ---@diagnostic disable-next-line: missing-fields
+        trouble.toggle({
+          mode = 'diagnostics',
+          filter = { buf = 0 },
+          open_no_results = true,
+        })
+      end,
+      desc = 'Trouble: Toggle current buffer',
     },
     {
       '<leader>xe',
-      '<cmd>Trouble diagnostics filter.severity=vim.diagnostic.severity.ERROR<cr>',
-      desc = 'Trouble: Toggle',
+      function()
+        local trouble = require('trouble.api')
+
+        ---@diagnostic disable-next-line: missing-fields
+        trouble.toggle({
+          mode = 'diagnostics',
+          filter = {
+            severity = vim.diagnostic.severity.ERROR,
+          },
+          open_no_results = true,
+        })
+      end,
+      desc = 'Trouble: Toggle errors',
     },
     {
-      '<leader>xd',
-      '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
-      desc = 'Trouble: Document diagnostics',
+      '<leader>xeb',
+      function()
+        local trouble = require('trouble.api')
+
+        ---@diagnostic disable-next-line: missing-fields
+        trouble.toggle({
+          mode = 'diagnostics',
+          filter = {
+            buf = 0,
+            severity = vim.diagnostic.severity.ERROR,
+          },
+          open_no_results = true,
+        })
+      end,
+      desc = 'Trouble: Toggle errors current buffer',
     },
     {
       '<leader>xq',
-      '<cmd>Trouble qflist toggle<cr>',
+      function()
+        local trouble = require('trouble.api')
+
+        ---@diagnostic disable-next-line: missing-fields
+        trouble.toggle({
+          mode = 'qflist',
+          open_no_results = true,
+        })
+      end,
+      desc = 'Trouble: Quickfix',
+    },
+    {
+      '<leader>xqb',
+      function()
+        local trouble = require('trouble.api')
+
+        ---@diagnostic disable-next-line: missing-fields
+        trouble.toggle({
+          mode = 'qflist',
+          filter = {
+            buf = 0,
+          },
+          open_no_results = true,
+        })
+      end,
       desc = 'Trouble: Quickfix',
     },
     {
       '<leader>xQ',
-      '<cmd>Trouble qflist toggle win.position=right win.size=.3<cr>',
+      function()
+        local trouble = require('trouble.api')
+
+        ---@diagnostic disable-next-line: missing-fields
+        trouble.toggle({
+          mode = 'qflist',
+          win = {
+            position = 'right',
+            size = 0.3,
+          },
+          open_no_results = true,
+        })
+      end,
+      desc = 'Trouble: Quickfix',
+    },
+    {
+      '<leader>xQb',
+      function()
+        local trouble = require('trouble.api')
+
+        ---@diagnostic disable-next-line: missing-fields
+        trouble.toggle({
+          mode = 'qflist',
+          filter = {
+            buf = 0,
+          },
+          win = {
+            position = 'right',
+            size = 0.3,
+          },
+          open_no_results = true,
+        })
+      end,
       desc = 'Trouble: Quickfix',
     },
     {
       '<leader>xl',
-      '<cmd>Trouble loclist toggle<cr>',
+      function()
+        local trouble = require('trouble.api')
+
+        ---@diagnostic disable-next-line: missing-fields
+        trouble.toggle({
+          mode = 'loclist',
+          open_no_results = true,
+        })
+      end,
+      desc = 'Trouble: Loclist',
+    },
+    {
+      '<leader>xlb',
+      function()
+        local trouble = require('trouble.api')
+
+        ---@diagnostic disable-next-line: missing-fields
+        trouble.toggle({
+          mode = 'loclist',
+          open_no_results = true,
+          filter = {
+            buf = 0,
+          },
+        })
+      end,
       desc = 'Trouble: Loclist',
     },
     {
       '<leader>xr',
-      '<cmd>Trouble lsp toggle focus=false win.position=right<cr>',
+      function()
+        local trouble = require('trouble.api')
+
+        ---@diagnostic disable-next-line: missing-fields
+        trouble.toggle({
+          mode = 'lsp',
+          focus = false,
+        })
+      end,
       desc = 'Trouble: Lsp references',
     },
     {
       '<M-o>',
+      function()
+        local trouble = require('trouble.api')
+
+        ---@diagnostic disable-next-line: missing-fields
+        trouble.toggle({
+          mode = 'symbols',
+          focus = false,
+        })
+      end,
       '<cmd>Trouble symbols toggle focus=false<cr>',
       desc = 'Trouble: symbols outline',
     },

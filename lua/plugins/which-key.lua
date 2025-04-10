@@ -5,10 +5,12 @@ return {
   event = 'VeryLazy',
   ---@diagnostic disable-next-line: missing-fields
   ---@type wk.Opts
-  opts = {},
+  opts = {
+    delay = 1000,
+  },
   keys = {
     {
-      '<leader>?',
+      '<leader><leader>?',
       function()
         require('which-key').show({ global = false })
       end,
