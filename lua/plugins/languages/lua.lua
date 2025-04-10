@@ -65,7 +65,7 @@ return {
   {
     'brunotvs/neotest-busted',
     ft = 'lua',
-    dev = true,
+    url = 'https://github.com/brunotvs/neotest-busted.git',
     dependencies = {
       'nvim-neotest/neotest',
     },

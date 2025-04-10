@@ -1,7 +1,7 @@
 --- @type LazySpec
 return {
   'nvim-neotest/neotest',
-  dev = true,
+  url = 'https://github.com/brunotvs/neotest.git',
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-treesitter/nvim-treesitter',

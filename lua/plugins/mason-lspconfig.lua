@@ -78,6 +78,7 @@ return {
       'williamboman/mason.nvim',
       'neovim/nvim-lspconfig',
     },
+    url = 'https://github.com/brunotvs/mason-lspconfig.nvim.git',
     opts = {
       ensure_installed = vim.tbl_keys(LspServers),
       automatic_installation = false,
