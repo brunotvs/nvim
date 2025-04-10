@@ -34,8 +34,8 @@ require('lazy').setup({
     notify = false,
   },
   spec = {
-    { import = 'plugins' },
     { import = 'plugins.languages' },
+    { import = 'plugins' },
   },
   ui = { backdrop = 100 },
 })
