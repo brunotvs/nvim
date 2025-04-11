@@ -95,16 +95,19 @@ return {
       '<leader>tr',
       function()
         local neotest = require('neotest')
+        local nio = require('nio')
         ---@type neotest.run.RunArgs
         local args = { strategy = 'integrated', suite = false }
 
-        ---@diagnostic disable-next-line: invisible
-        local tree = neotest.run.get_tree_from_args(args, true)
-        if tree then
-          neotest.run.run(args)
-          return
-        end
-        neotest.run.run_last(args)
+        nio.create(function()
+          ---@diagnostic disable-next-line: invisible
+          local tree = neotest.run.get_tree_from_args({}, true)
+          if tree then
+            neotest.run.run(args)
+            return
+          end
+          neotest.run.run_last(args)
+        end)()
       end,
       desc = 'Neotest: Run Nearest',
     },
@@ -149,16 +152,19 @@ return {
       '<leader>dt',
       function()
         local neotest = require('neotest')
+        local nio = require('nio')
         ---@type neotest.run.RunArgs
         local args = { strategy = 'dap', suite = false }
 
-        ---@diagnostic disable-next-line: invisible
-        local tree = neotest.run.get_tree_from_args(args, true)
-        if tree then
-          neotest.run.run(args)
-          return
-        end
-        neotest.run.run_last(args)
+        nio.create(function()
+          ---@diagnostic disable-next-line: invisible
+          local tree = neotest.run.get_tree_from_args({}, true)
+          if tree then
+            neotest.run.run(args)
+            return
+          end
+          neotest.run.run_last(args)
+        end)()
       end,
       desc = 'Neotest: debug nearest or last',
     },
