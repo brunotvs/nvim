@@ -8,7 +8,7 @@ TableInsert(LspServers, {
       },
     },
   },
-  ['ltex_plus'] = {
+  ltex_plus = {
     on_attach = function(client, bufnr)
       require('ltex_extra').setup()
     end,
@@ -18,6 +18,7 @@ TableInsert(LspServers, {
           commands = {
             ['\\listof{}'] = 'ignore',
             ['\\author{}'] = 'ignore',
+            ['\\author[]{}'] = 'ignore',
           },
         },
       },
