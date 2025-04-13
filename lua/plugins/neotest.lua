@@ -80,7 +80,8 @@ return {
     {
       '<leader>tW',
       function()
-        require('neotest').watch.stop_all()
+        ---@diagnostic disable-next-line: missing-parameter
+        require('neotest').watch.stop()
       end,
       desc = 'Neotest: stop all watchers',
     },
