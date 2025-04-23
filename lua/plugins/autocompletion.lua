@@ -1,4 +1,6 @@
---- @type LazySpec
+---@module 'cmp-conventionalcommits'
+
+---@type LazySpec
 return {
   {
     -- Autocompletion
@@ -21,9 +23,11 @@ return {
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
       {
-        'davidsierradz/cmp-conventionalcommits',
-        url = 'https://github.com/brunotvs/cmp-conventionalcommits.git',
-        opts = {},
+        'brunotvs/cmp-conventionalcommits',
+        ---@type cmp-conventionalcommits.PluginOptions
+        opts = {
+          commitlint_path = 'commitlint',
+        },
       },
     },
     config = function()
