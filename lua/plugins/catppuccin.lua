@@ -64,6 +64,7 @@ return {
       telescope = true,
       treesitter = true,
       which_key = true,
+      neogit = true,
     },
   },
   init = function()
