@@ -92,7 +92,7 @@ return {
           { name = 'copilot' },
           { name = 'nvim_lsp_signature_help' },
           { name = 'path' },
-          { name = 'buffer', keyword_length = 3 },
+          { name = 'buffer', keyword_length = 6 },
         },
         mapping = cmp.mapping.preset.insert({
           ['<C-n>'] = cmp.mapping.select_next_item(),
