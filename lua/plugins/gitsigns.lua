@@ -31,10 +31,10 @@ return {
     },
     on_attach = function(bufnr)
       vim.keymap.set('n', '[g', function()
-        require('gitsigns').nav_hunk('prev')
+        require('gitsigns').nav_hunk('prev', { target = 'all' })
       end, { buffer = bufnr, desc = 'Gitsings: [G]o to [P]revious Hunk' })
       vim.keymap.set('n', ']g', function()
-        require('gitsigns').nav_hunk('next')
+        require('gitsigns').nav_hunk('next', { target = 'all' })
       end, {
         buffer = bufnr,
         desc = 'Gitsings: [G]o to [N]ext Hunk',
