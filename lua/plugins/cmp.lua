@@ -85,12 +85,29 @@ return {
             luasnip.lsp_expand(args.body)
           end,
         },
+        sorting = {
+          priority_weight = 2,
+          comparators = {
+            -- Below is the default comparitor list and order for nvim-cmp
+            cmp.config.compare.offset,
+            -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+            require('copilot_cmp.comparators').prioritize,
+            cmp.config.compare.recently_used,
+            cmp.config.compare.locality,
+            cmp.config.compare.kind,
+            cmp.config.compare.sort_text,
+            cmp.config.compare.length,
+            cmp.config.compare.order,
+          },
+        },
         preselect = cmp.PreselectMode.None,
         sources = {
           { name = 'luasnip' },
           { name = 'nvim_lsp' },
-          { name = 'copilot' },
           { name = 'nvim_lsp_signature_help' },
+          { name = 'copilot' },
           { name = 'path' },
           { name = 'buffer', keyword_length = 6 },
         },
