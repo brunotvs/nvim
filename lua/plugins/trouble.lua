@@ -188,9 +188,9 @@ return {
         trouble.toggle({
           mode = 'symbols',
           focus = false,
+          win = { size = 0.3 },
         })
       end,
-      '<cmd>Trouble symbols toggle focus=false<cr>',
       desc = 'Trouble: symbols outline',
     },
     {
@@ -209,7 +209,20 @@ return {
     },
     {
       '<leader>E',
-      '<cmd>Trouble qflist toggle win.position=right win.size=.3 filter.buf=0 filter.range=true<cr>',
+      function()
+        local trouble = require('trouble.api')
+
+        ---@diagnostic disable-next-line: missing-fields
+        trouble.toggle({
+          mode = 'qflist',
+          open_no_results = true,
+          filter = {
+            buf = 0,
+            range = true,
+          },
+          win = { position = 'right', size = 0.3 },
+        })
+      end,
     },
   },
 }
