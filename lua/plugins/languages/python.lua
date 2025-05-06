@@ -14,8 +14,8 @@ return {
     },
     init = function()
       local mason_registry = require('mason-registry')
-      local debugpy = mason_registry.get_package('debugpy')
-      local path = debugpy:get_install_path()
+      local install_location = require('mason-core.installer.InstallLocation')
+      local path = install_location.global():package('debugpy')
       require('dap-python').setup(path)
     end,
   },

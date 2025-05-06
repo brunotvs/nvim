@@ -40,7 +40,7 @@ return {
             -- "module 'lldebugger' not found" errors in the dap-repl when trying to launch a debug session
 
             ---@diagnostic disable-next-line: inject-field
-            c.extensionPath = require('mason-registry').get_package('local-lua-debugger'):get_install_path()
+            c.extensionPath = require('mason-core.installer.InstallLocation').global():package('local-lua-debugger')
             on_config(c)
           else
             on_config(config)
