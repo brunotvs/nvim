@@ -2,8 +2,9 @@ TableInsert(LspServers, {
   lua_ls = {
     settings = {
       Lua = {
-        workspace = { checkThirdParty = false },
-        telemetry = { enable = false },
+        workspace = {
+          checkThirdParty = 'Disable',
+        },
         hint = { enable = true },
       },
     },
