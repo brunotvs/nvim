@@ -13,7 +13,6 @@ return {
       'williamboman/mason.nvim',
     },
     init = function()
-      local mason_registry = require('mason-registry')
       local install_location = require('mason-core.installer.InstallLocation')
       local path = install_location.global():package('debugpy')
       require('dap-python').setup(path)
