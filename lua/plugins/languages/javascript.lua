@@ -48,7 +48,7 @@ TableInsert(LspServers, {
 })
 -- TableInsert(ServersToFilterFromFormat, { 'tsserver', 'jsonls' })
 TableInsert(MasonEnsureInstalled, { 'js-debug-adapter', 'prettierd', 'eslint_d', 'nxls' })
-TableInsert(TreesitterEnsureInstalled, { 'javascript', 'jsdoc', 'jsonc', 'jsonc' })
+TableInsert(TreesitterEnsureInstalled, { 'javascript', 'jsdoc', 'json', 'jsonc', 'jsonc' })
 TableInsert(NeotestAdapters, {
   ['neotest-jest'] = {
     jestCommand = 'npm run jest -- --coverage',
