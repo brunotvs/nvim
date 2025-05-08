@@ -4,6 +4,12 @@ TableInsert(LspServers, {
       Lua = {
         workspace = {
           checkThirdParty = 'Disable',
+          userThirdParty = {
+            (function()
+              local install_location = require('mason-core.installer.InstallLocation')
+              return install_location.global():share('luals-addons')
+            end)(),
+          },
         },
         hint = { enable = true },
       },
@@ -11,7 +17,7 @@ TableInsert(LspServers, {
   },
 })
 
-TableInsert(MasonEnsureInstalled, { 'stylua', 'local-lua-debugger' })
+TableInsert(MasonEnsureInstalled, { 'stylua', 'local-lua-debugger', 'luals-addon-busted', 'luals-addon-luassert' })
 
 TableInsert(TreesitterEnsureInstalled, { 'lua' })
 TableInsert(NeotestAdapters, { ['neotest-busted'] = {} })

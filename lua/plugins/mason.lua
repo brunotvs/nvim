@@ -19,6 +19,7 @@ return {
     registries = {
       'github:mason-org/mason-registry',
       'github:brunotvs/lua-dap-mason-registry',
+      'github:brunotvs/luals-addons-mason-registry',
     },
   },
   ---@param opts MasonSettings | { ensure_installed: string[] }
