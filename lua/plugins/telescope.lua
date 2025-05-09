@@ -12,9 +12,9 @@ return {
   'nvim-telescope/telescope.nvim',
   branch = '0.1.x',
   dependencies = { 'nvim-lua/plenary.nvim' },
-  --- @module "telescope"
+  ---@module "telescope"
   opts = {
-    defaults = { file_ignore_patterns = { 'node_modules' } },
+    defaults = { file_ignore_patterns = { 'node_modules', '.git' } },
   },
   keys = {
     {
@@ -52,16 +52,9 @@ return {
     {
       '<leader>sf',
       function()
-        require('telescope.builtin').find_files()
-      end,
-      desc = '[S]earch [F]iles',
-    },
-    {
-      '<leader>sF',
-      function()
         require('telescope.builtin').find_files({ hidden = true })
       end,
-      desc = '[S]earch hidden [F]iles',
+      desc = '[S]earch [F]iles',
     },
     {
       '<leader>sh',
