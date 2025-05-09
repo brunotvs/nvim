@@ -1,15 +1,15 @@
 TableInsert(LspServers, {
   lua_ls = {
+    init_options = {
+      storagePath = (function()
+        local install_location = require('mason-core.installer.InstallLocation')
+        return install_location.global():share('luals-addons')
+      end)(),
+    },
     settings = {
       Lua = {
         workspace = {
           checkThirdParty = 'Disable',
-          userThirdParty = {
-            (function()
-              local install_location = require('mason-core.installer.InstallLocation')
-              return install_location.global():share('luals-addons')
-            end)(),
-          },
         },
         hint = { enable = true },
       },
