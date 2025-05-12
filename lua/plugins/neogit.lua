@@ -16,6 +16,7 @@ return {
       diffview = true,
     },
   },
+  cmd = 'Neogit',
   keys = {
     {
       '<leader>ng',
