@@ -33,6 +33,13 @@ return {
         desc = 'Debug: Start/Continue',
       },
       {
+        '<F6>',
+        function()
+          require('dap').restart()
+        end,
+        desc = 'Debug: Start/Continue',
+      },
+      {
         '<F17>',
         function()
           require('dap').disconnect()
