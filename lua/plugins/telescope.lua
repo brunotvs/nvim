@@ -56,6 +56,13 @@ return {
       desc = '[S]earch [F]iles',
     },
     {
+      '<leader>sF',
+      function()
+        require('telescope.builtin').find_files({ hidden = true, no_ignore = true })
+      end,
+      desc = '[S]earch [F]iles',
+    },
+    {
       '<leader>sh',
       function()
         require('telescope.builtin').help_tags()
