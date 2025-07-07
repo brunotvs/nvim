@@ -39,6 +39,7 @@ LspServers = {
 ---@type string[]
 MasonEnsureInstalled = {
   'latexindent',
+  'editorconfig-checker',
 }
 ---@type string[]
 TreesitterEnsureInstalled = {
@@ -47,6 +48,7 @@ TreesitterEnsureInstalled = {
   'markdown',
   'markdown_inline',
   'toml',
+  'editorconfig',
 }
 ---@type string[]
 NeotestAdapters = {}
