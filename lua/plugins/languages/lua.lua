@@ -1,3 +1,5 @@
+---@module "conform"
+
 TableInsert(LspServers, {
   lua_ls = {
     init_options = {
@@ -17,7 +19,7 @@ TableInsert(LspServers, {
   },
 })
 
-TableInsert(MasonEnsureInstalled, { 'local-lua-debugger', 'luals-addon-busted', 'luals-addon-luassert' })
+TableInsert(MasonEnsureInstalled, { 'stylua', 'local-lua-debugger', 'luals-addon-busted', 'luals-addon-luassert' })
 
 TableInsert(TreesitterEnsureInstalled, { 'lua' })
 TableInsert(NeotestAdapters, { ['neotest-busted'] = {} })
@@ -27,7 +29,21 @@ return {
   { 'williamboman/mason-lspconfig.nvim' },
   {
     'stevearc/conform.nvim',
-    opts = {},
+    ---@type conform.setupOpts
+    opts = {
+      formatters = {
+        stylua = {
+          command = 'stylua',
+          cwd = require('conform.util').root_file({ 'stylua.toml', '.stylua.toml' }),
+          require_cwd = true,
+        },
+      },
+      formatters_by_ft = {
+        lua = {
+          'stylua',
+        },
+      },
+    },
   },
   {
     'mfussenegger/nvim-dap',
