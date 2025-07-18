@@ -6,6 +6,7 @@ return {
   -- url = 'https://github.com/brunotvs/conform.nvim.git',
   optional = true,
   event = { 'BufReadPre', 'BufNewFile' },
+  ---@type conform.setupOpts
   opts = {
     format_on_save = function(bufnr)
       if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
