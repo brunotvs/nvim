@@ -105,7 +105,8 @@ return {
               opts[key] = value
             end
           end
-          require('lspconfig')[server_name].setup(opts)
+          vim.lsp.config(server_name, opts)
+          vim.lsp.enable(server_name)
         end,
       })
     end,
