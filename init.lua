@@ -50,7 +50,7 @@ TreesitterEnsureInstalled = {
   'toml',
   'editorconfig',
 }
----@type string[]
+---@type table<string,table>
 NeotestAdapters = {}
 
 ---@type (fun(client: any, bufnr:integer): nil)[]
