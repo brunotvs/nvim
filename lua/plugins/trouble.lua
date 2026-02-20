@@ -135,7 +135,7 @@ return {
           open_no_results = true,
         })
       end,
-      desc = 'Trouble: Quickfix',
+      desc = 'Trouble: Quickfix for current buffer',
     },
     {
       '<leader>xl',
