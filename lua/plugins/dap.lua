@@ -68,6 +68,13 @@ return {
         desc = 'Debug: Set Breakpoint',
       },
       {
+        '<leader>de',
+        function()
+          require('dap').set_exception_breakpoints()
+        end,
+        desc = 'Debug: Set Exception Breakpoint',
+      },
+      {
         '<M-k>',
         function()
           require('dap.ui.widgets').hover()
