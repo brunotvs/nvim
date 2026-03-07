@@ -10,7 +10,6 @@ TableInsert(AdditionalOnAttachFunctions, { telescope_lsp_keymaps })
 --- @type LazySpec
 return {
   'nvim-telescope/telescope.nvim',
-  branch = '0.1.x',
   dependencies = { 'nvim-lua/plenary.nvim' },
   ---@module "telescope"
   opts = {
