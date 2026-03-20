@@ -17,9 +17,8 @@ return {
   opts = {
     ensure_installed = MasonEnsureInstalled,
     registries = {
+      'github:brunotvs/custom-mason-registry',
       'github:mason-org/mason-registry',
-      'github:brunotvs/lua-dap-mason-registry',
-      'github:brunotvs/luals-addons-mason-registry',
     },
   },
   ---@param opts MasonSettings | { ensure_installed: string[] }
