@@ -83,7 +83,7 @@ return {
       ensure_installed = vim.tbl_keys(LspServers),
       automatic_installation = false,
     },
-    init = function()
+    config = function(_, opts)
       -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
@@ -98,17 +98,19 @@ return {
             vim.cmd.LspUninstall(server_name)
             return
           end
-          local opts = { on_attach = OnAttach, capabilities = capabilities }
+          local server_settings = { on_attach = OnAttach, capabilities = capabilities }
 
           for key, value in pairs(LspServers[server_name]) do
             if key ~= 'on_attach' then
-              opts[key] = value
+              server_settings[key] = value
             end
           end
-          vim.lsp.config(server_name, opts)
+          vim.lsp.config(server_name, server_settings)
           vim.lsp.enable(server_name)
         end,
       })
+
+      mason_lspconfig.setup(opts)
     end,
   },
 }
