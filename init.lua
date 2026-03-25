@@ -22,7 +22,6 @@ end
 LspServers = {
   clangd = {},
   perlnavigator = {},
-  taplo = {},
   vimls = {},
 }
 
