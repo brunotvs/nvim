@@ -48,7 +48,7 @@ LspServers = vim.tbl_extend('error', LspServers, {
 })
 ServersToFilterFromFormat = vim.list_extend(ServersToFilterFromFormat, { 'tsserver', 'jsonls' })
 MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'js-debug-adapter', 'prettierd', 'eslint_d', 'nxls' })
-TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'javascript', 'jsdoc', 'json', 'jsonc', 'jsonc' })
+TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'javascript', 'jsdoc', 'json' })
 NeotestAdapters = vim.list_extend(NeotestAdapters, {
   ['neotest-jest'] = {
     jestCommand = 'npm run jest -- --coverage',

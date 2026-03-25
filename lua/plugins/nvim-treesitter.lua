@@ -3,28 +3,40 @@ return {
   -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
+  ---@type TSConfig
   opts = {
-    -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = TreesitterEnsureInstalled,
-
-    -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-    auto_install = false,
-
-    highlight = {
-      enable = true,
-    },
-    indent = {
-      enable = true,
-    },
-    incremental_selection = {
-      enable = true,
-      keymaps = {
-        init_selection = '<c-space>',
-        node_incremental = '<c-space>',
-        scope_incremental = '<c-s>',
-        node_decremental = '<M-space>',
-      },
-    },
+    install_dir = vim.fs.joinpath(vim.fn.stdpath('data') --[[@as string]], 'site'),
   },
-  main = 'nvim-treesitter.config',
+  init = function(_)
+    local parsers = TreesitterEnsureInstalled
+    local ts = require('nvim-treesitter')
+    ts.install(parsers)
+
+    vim.api.nvim_create_autocmd('FileType', {
+      callback = function(args)
+        local buf, filetype = args.buf, args.match
+
+        local language = vim.treesitter.language.get_lang(filetype)
+        if not language then
+          return
+        end
+
+        -- check if parser exists and load it
+        if not vim.treesitter.language.add(language) then
+          return
+        end
+
+        -- enables syntax highlighting and other treesitter features
+        vim.treesitter.start(buf, language)
+
+        -- enables treesitter based folds
+        -- for more info on folds see `:help folds`
+        vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+        vim.wo.foldmethod = 'expr'
+
+        -- enables treesitter based indentation
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      end,
+    })
+  end,
 }
