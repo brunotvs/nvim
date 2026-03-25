@@ -1,4 +1,5 @@
 LspServers = vim.tbl_extend('error', LspServers, { rledgerls = {} })
+TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'beancount' })
 
 vim.filetype.add({ extension = { beancount = 'beancount' } })
 --- @type LazySpec
