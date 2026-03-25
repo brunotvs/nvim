@@ -1,5 +1,5 @@
-TableInsert(MasonEnsureInstalled, { 'commitlint' })
-TableInsert(TreesitterEnsureInstalled, { 'gitattributes', 'git_rebase', 'gitignore', 'gitcommit', 'git_config' })
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'commitlint' })
+TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'gitattributes', 'git_rebase', 'gitignore', 'gitcommit', 'git_config' })
 
 --- @type LazySpec
 return {
