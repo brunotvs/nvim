@@ -4,7 +4,7 @@ local function telescope_lsp_keymaps(_, _)
   vim.keymap.set('n', '<leader>wd', require('telescope.builtin').lsp_dynamic_workspace_symbols, { desc = 'LSP: [W]orkspace [S]ymbols' })
 end
 
-TableInsert(AdditionalOnAttachFunctions, { telescope_lsp_keymaps })
+AdditionalOnAttachFunctions = vim.list_extend(AdditionalOnAttachFunctions, { telescope_lsp_keymaps })
 
 -- Fuzzy Finder (files, lsp, etc)
 --- @type LazySpec

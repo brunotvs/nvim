@@ -1,6 +1,6 @@
-TableInsert(LspServers, { yamlls = {} })
-TableInsert(MasonEnsureInstalled, { 'prettierd' })
-TableInsert(TreesitterEnsureInstalled, { 'yaml' })
+LspServers = vim.tbl_extend('error', LspServers, { yamlls = {} })
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'prettierd' })
+TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'yaml' })
 
 --- @type LazySpec
 return {

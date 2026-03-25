@@ -1,6 +1,6 @@
 ---@module "conform"
 
-TableInsert(LspServers, {
+LspServers = vim.tbl_extend('error', LspServers, {
   lua_ls = {
     init_options = {
       storagePath = (function()
@@ -19,10 +19,10 @@ TableInsert(LspServers, {
   },
 })
 
-TableInsert(MasonEnsureInstalled, { 'stylua', 'local-lua-debugger', 'luals-addon-busted', 'luals-addon-luassert' })
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'stylua', 'local-lua-debugger', 'luals-addon-busted', 'luals-addon-luassert' })
 
-TableInsert(TreesitterEnsureInstalled, { 'lua' })
-TableInsert(NeotestAdapters, { ['neotest-busted'] = {} })
+TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'lua' })
+NeotestAdapters = vim.list_extend(NeotestAdapters, { ['neotest-busted'] = {} })
 
 --- @type LazySpec
 return {

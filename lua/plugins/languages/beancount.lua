@@ -1,4 +1,4 @@
-TableInsert(LspServers, { rledgerls = {} })
+LspServers = vim.tbl_extend('error', LspServers, { rledgerls = {} })
 
 vim.filetype.add({ extension = { beancount = 'beancount' } })
 --- @type LazySpec

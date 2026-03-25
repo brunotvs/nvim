@@ -1,10 +1,10 @@
-TableInsert(LspServers, {
+LspServers = vim.tbl_extend('error', LspServers, {
   gopls = {},
 })
 
-TableInsert(MasonEnsureInstalled, { 'go-debug-adapter', 'delve' })
-TableInsert(TreesitterEnsureInstalled, { 'go' })
-TableInsert(NeotestAdapters, { ['neotest-golang'] = {} })
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'go-debug-adapter', 'delve' })
+TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'go' })
+NeotestAdapters = vim.list_extend(NeotestAdapters, { ['neotest-golang'] = {} })
 
 ---@type LazySpec
 return {

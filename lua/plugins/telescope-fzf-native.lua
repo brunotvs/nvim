@@ -1,7 +1,7 @@
 --- @type LazySpec
 return {
   'nvim-telescope/telescope-fzf-native.nvim',
-  build = vim.fn.has('win32') == 1 and 'nmake' or 'make',
+  build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install',
   dependencies = { 'nvim-telescope/telescope.nvim' },
   init = function()
     require('telescope').load_extension('fzf')

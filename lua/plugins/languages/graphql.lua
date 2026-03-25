@@ -1,4 +1,4 @@
-TableInsert(LspServers, {
+LspServers = vim.tbl_extend('error', LspServers, {
   graphql = {
     root_dir = function(fname)
       return require('lspconfig.util').root_pattern(
@@ -14,8 +14,8 @@ TableInsert(LspServers, {
   },
 })
 
-TableInsert(MasonEnsureInstalled, { 'prettierd' })
-TableInsert(TreesitterEnsureInstalled, { 'graphql' })
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'prettierd' })
+TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'graphql' })
 
 --- @type LazySpec
 return {

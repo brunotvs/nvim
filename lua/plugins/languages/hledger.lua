@@ -1,4 +1,4 @@
-TableInsert(TreesitterEnsureInstalled, { 'ledger' })
+TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'ledger' })
 --- @type LazySpec
 return {
 

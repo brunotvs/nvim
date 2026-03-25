@@ -19,16 +19,6 @@ function FilterServers(client)
   return true
 end
 
----@param list table
----@param values any[]
-function TableInsert(list, values)
-  for key, value in pairs(values) do
-    local list_len = #list
-    local index = (type(key) == 'number' and { list_len + 1 } or { key })[1]
-    list[index] = value
-  end
-end
-
 LspServers = {
   clangd = {},
   perlnavigator = {},

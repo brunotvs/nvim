@@ -1,4 +1,4 @@
-TableInsert(LspServers, {
+LspServers = vim.tbl_extend('error', LspServers, {
   texlab = {
     settings = {
       texlab = {
@@ -9,7 +9,7 @@ TableInsert(LspServers, {
     },
   },
   ltex_plus = {
-    on_attach = function(client, bufnr)
+    on_attach = function(_, _)
       require('ltex_extra').setup()
     end,
     settings = {

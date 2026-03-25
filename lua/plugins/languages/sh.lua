@@ -1,5 +1,5 @@
-TableInsert(MasonEnsureInstalled, { 'beautysh' })
-TableInsert(LspServers, { bashls = {} })
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'beautysh' })
+LspServers = vim.tbl_extend('error', LspServers, { bashls = {} })
 
 --- @type LazySpec
 return {

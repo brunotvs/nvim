@@ -19,7 +19,7 @@ local function setPeekOrHover(_, bufnr)
   vim.keymap.set('n', '<leader>k', peekOrHover, { desc = 'UFO: Peek fold or lsp hover', buffer = bufnr })
 end
 
-TableInsert(AdditionalOnAttachFunctions, { setPeekOrHover })
+AdditionalOnAttachFunctions = vim.list_extend(AdditionalOnAttachFunctions, { setPeekOrHover })
 
 local ftMap = {
   vim = 'indent',
@@ -63,7 +63,7 @@ return {
   event = 'BufEnter',
   --- @type UfoConfig
   opts = {
-    provider_selector = function(bufnr, filetype, buftype)
+    provider_selector = function(_, filetype, _)
       return ftMap[filetype] or customizeSelector
     end,
     preview = {
