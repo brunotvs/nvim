@@ -1,4 +1,4 @@
-LspServers = vim.tbl_extend('error', LspServers, {
+LspServers = vim.tbl_extend('force', LspServers, {
   texlab = {
     settings = {
       texlab = {

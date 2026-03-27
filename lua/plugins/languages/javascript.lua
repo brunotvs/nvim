@@ -1,4 +1,4 @@
-LspServers = vim.tbl_extend('error', LspServers, {
+LspServers = vim.tbl_extend('force', LspServers, {
   angularls = {
     root_dir = function(fname)
       return require('lspconfig.util').root_pattern('angular.json', 'project.json')(fname)
@@ -49,7 +49,7 @@ LspServers = vim.tbl_extend('error', LspServers, {
 ServersToFilterFromFormat = vim.list_extend(ServersToFilterFromFormat, { 'tsserver', 'jsonls' })
 MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'js-debug-adapter', 'prettierd', 'eslint_d', 'nxls' })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'javascript', 'jsdoc', 'json' })
-NeotestAdapters = vim.list_extend(NeotestAdapters, {
+NeotestAdapters = vim.tbl_extend('force', NeotestAdapters, {
   ['neotest-jest'] = {
     jestCommand = 'npm run jest -- --coverage',
     cwd = function()

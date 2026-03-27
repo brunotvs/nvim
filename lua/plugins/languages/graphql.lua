@@ -1,4 +1,4 @@
-LspServers = vim.tbl_extend('error', LspServers, {
+LspServers = vim.tbl_extend('force', LspServers, {
   graphql = {
     root_dir = function(fname)
       return require('lspconfig.util').root_pattern(

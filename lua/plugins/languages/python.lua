@@ -1,7 +1,7 @@
-LspServers = vim.tbl_extend('error', LspServers, { pyright = {} })
+LspServers = vim.tbl_extend('force', LspServers, { pyright = {} })
 MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'debugpy' })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'python' })
-NeotestAdapters = vim.list_extend(NeotestAdapters, { ['neotest-python'] = {} })
+NeotestAdapters = vim.tbl_extend('force', NeotestAdapters, { ['neotest-python'] = {} })
 
 --- @type LazySpec
 return {

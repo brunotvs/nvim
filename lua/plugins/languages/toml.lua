@@ -1,4 +1,4 @@
-LspServers = vim.tbl_extend('error', LspServers, { taplo = {} })
+LspServers = vim.tbl_extend('force', LspServers, { taplo = {} })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'toml' })
 
 --- @type LazySpec

@@ -1,4 +1,4 @@
-LspServers = vim.tbl_extend('error', LspServers, { powershell_es = {} })
+LspServers = vim.tbl_extend('force', LspServers, { powershell_es = {} })
 
 --- @type LazySpec
 return {

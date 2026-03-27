@@ -1,6 +1,6 @@
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'rust' })
 MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'codelldb' })
-NeotestAdapters = vim.list_extend(NeotestAdapters, { ['rustaceanvim.neotest'] = {} })
+NeotestAdapters = vim.tbl_extend('force', NeotestAdapters, { ['rustaceanvim.neotest'] = {} })
 
 --- @type LazySpec
 return {

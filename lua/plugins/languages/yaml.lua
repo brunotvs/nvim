@@ -1,4 +1,4 @@
-LspServers = vim.tbl_extend('error', LspServers, { yamlls = {} })
+LspServers = vim.tbl_extend('force', LspServers, { yamlls = {} })
 MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'prettierd' })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'yaml' })
 

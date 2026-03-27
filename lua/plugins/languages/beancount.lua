@@ -1,4 +1,4 @@
-LspServers = vim.tbl_extend('error', LspServers, { rledgerls = {} })
+LspServers = vim.tbl_extend('force', LspServers, { rledgerls = {} })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'beancount' })
 
 vim.filetype.add({ extension = { beancount = 'beancount' } })

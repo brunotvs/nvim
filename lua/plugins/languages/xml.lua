@@ -1,4 +1,4 @@
-LspServers = vim.tbl_extend('error', LspServers, { lemminx = {} })
+LspServers = vim.tbl_extend('force', LspServers, { lemminx = {} })
 MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'xmlformatter' })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'xml' })
 

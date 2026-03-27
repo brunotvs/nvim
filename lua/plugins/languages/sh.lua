@@ -1,5 +1,5 @@
 MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'beautysh' })
-LspServers = vim.tbl_extend('error', LspServers, { bashls = {} })
+LspServers = vim.tbl_extend('force', LspServers, { bashls = {} })
 
 --- @type LazySpec
 return {

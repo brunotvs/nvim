@@ -1,10 +1,10 @@
-LspServers = vim.tbl_extend('error', LspServers, {
+LspServers = vim.tbl_extend('force', LspServers, {
   gopls = {},
 })
 
 MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'go-debug-adapter', 'delve' })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'go' })
-NeotestAdapters = vim.list_extend(NeotestAdapters, { ['neotest-golang'] = {} })
+NeotestAdapters = vim.tbl_extend('force', NeotestAdapters, { ['neotest-golang'] = {} })
 
 ---@type LazySpec
 return {
