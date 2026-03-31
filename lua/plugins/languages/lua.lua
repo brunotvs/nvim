@@ -1,4 +1,5 @@
 ---@module "conform"
+---@module "neotest-busted"
 
 LspServers = vim.tbl_extend('force', LspServers, {
   lua_ls = {
@@ -19,10 +20,20 @@ LspServers = vim.tbl_extend('force', LspServers, {
   },
 })
 
-MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'stylua', 'local-lua-debugger', 'luals-addon-busted', 'luals-addon-luassert' })
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'stylua', 'local-lua-debugger', 'luals-addon-busted', 'luals-addon-luassert', 'busted' })
 
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'lua' })
-NeotestAdapters = vim.tbl_extend('force', NeotestAdapters, { ['neotest-busted'] = {} })
+NeotestAdapters = vim.tbl_extend('force', NeotestAdapters, {
+  ---@type fun(): neotest-busted.Config?
+  ['neotest-busted'] = function()
+    local install_location = require('mason-core.installer.InstallLocation')
+    ---@type neotest-busted.Config
+    local result = {
+      local_luarocks_only = false,
+    }
+    return result
+  end,
+})
 
 --- @type LazySpec
 return {
@@ -82,9 +93,10 @@ return {
     end,
   },
   {
-    'brunotvs/neotest-busted',
+    'MisanthropicBit/neotest-busted',
+    url = 'git@github.com:brunotvs/misanthropic-neotest-busted.git',
+    branch = 'no-coverage',
     ft = 'lua',
-    url = 'https://github.com/brunotvs/neotest-busted.git',
     dependencies = {
       'nvim-neotest/neotest',
     },
