@@ -21,17 +21,5 @@ return {
       'github:mason-org/mason-registry',
     },
   },
-  ---@param opts MasonSettings | { ensure_installed: string[] }
-  config = function(_, opts)
-    require('mason').setup(opts)
-    local mr = require('mason-registry')
-    if mr.refresh then
-      mr.refresh(function()
-        ensure_installed(opts.ensure_installed)
-      end)
-    else
-      ensure_installed(opts.ensure_installed)
-    end
-  end,
   keys = { { '<M-m>', '<cmd>Mason<CR>', desc = 'Mason: Open' } },
 }
