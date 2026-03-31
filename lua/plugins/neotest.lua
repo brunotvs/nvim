@@ -36,16 +36,24 @@ return {
           vim.list_extend(adapters, config)
         elseif config ~= false then
           local adapter = require(name)
-          if type(config) == 'table' and not vim.tbl_isempty(config) then
+          local adapter_config = {}
+          if type(config) == 'table' then
+            adapter_config = config
+          elseif type(config) == 'function' then
+            adapter_config = config()
+          end
+
+          if not vim.tbl_isempty(adapter_config) then
             local meta = getmetatable(adapter)
             if adapter.setup then
-              adapter.setup(config)
+              adapter.setup(adapter_config)
             elseif meta and meta.__call then
-              adapter(config)
+              adapter(adapter_config)
             else
               error('Adapter ' .. name .. ' does not support setup')
             end
           end
+
           adapters[#adapters + 1] = adapter
         end
       end
