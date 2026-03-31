@@ -49,7 +49,7 @@ vim.keymap.set('n', '<leader>bod', function()
       local clients = vim.lsp.get_clients({ bufnr = bufnr })
       for _, client in ipairs(clients) do
         if not vim.lsp.buf_is_attached(current_buffer, client.id) then
-          vim.lsp.stop_client(client.id)
+          vim.lsp.get_client_by_id(client.id):stop()
         end
       end
       vim.cmd.bdelete(bufnr)
