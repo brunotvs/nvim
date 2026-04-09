@@ -1,3 +1,5 @@
+---@module 'rustaceanvim'
+
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'rust' })
 MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'codelldb' })
 NeotestAdapters = vim.tbl_extend('force', NeotestAdapters, { ['rustaceanvim.neotest'] = {} })
