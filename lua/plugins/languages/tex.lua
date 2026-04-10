@@ -26,11 +26,18 @@ LspServers = vim.tbl_extend('force', LspServers, {
   },
 })
 
+TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'latex' })
+
 return {
-  { 'williamboman/mason-lspconfig.nvim' },
-  {
-    'barreiroleo/ltex_extra.nvim',
-    ft = { 'markdown', 'tex' },
-    dependencies = { 'neovim/nvim-lspconfig' },
+  'tex-config',
+  virtual = true,
+  ft = { 'tex', 'latex', 'markdown' },
+  dependencies = {
+    { 'williamboman/mason-lspconfig.nvim' },
+    {
+      'barreiroleo/ltex_extra.nvim',
+      ft = { 'markdown', 'tex' },
+      dependencies = { 'neovim/nvim-lspconfig' },
+    },
   },
 }
