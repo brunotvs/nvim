@@ -31,7 +31,7 @@ return {
     {
       '<F7>',
       function()
-        require('dapui').toggle()
+        require('dapui').toggle({ reset = true })
       end,
       desc = 'Debug: See last session result',
     },

@@ -8,11 +8,30 @@ return {
     'folke/trouble.nvim',
     'nvim-neotest/nvim-nio',
   },
+  ---@type neotest.Config
+  ---@diagnostic disable: missing-fields
   opts = {
     adapters = NeotestAdapters,
     status = { virtual_text = true },
     output = { open_on_run = true },
+    summary = {
+      open = function()
+        local buf = vim.api.nvim_create_buf(false, true)
+        return vim.api.nvim_open_win(buf, true, {
+          relative = 'editor',
+          bufpos = { 100, 100 },
+          width = 50,
+          height = 100,
+          col = vim.o.columns - 1,
+          row = 0,
+          style = 'minimal',
+          anchor = 'NW',
+          border = 'none',
+        })
+      end,
+    },
   },
+  ---@diagnostic enable: missing-fields
   init = function()
     local neotest_ns = vim.api.nvim_create_namespace('neotest')
     vim.diagnostic.config({
@@ -130,8 +149,8 @@ return {
     {
       '<M-t>',
       function()
-        require('neotest').summary.toggle()
-        vim.cmd.wincmd('=')
+        require('neotest').summary.toggle({ enter = true })
+        -- vim.cmd.wincmd('=')
       end,
       desc = 'Neotest: Toggle Summary',
     },
