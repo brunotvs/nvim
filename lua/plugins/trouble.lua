@@ -25,7 +25,7 @@ return {
       desc = 'Trouble: Toggle',
     },
     {
-      '<leader>xxb',
+      '<leader>xb',
       function()
         local trouble = require('trouble.api')
 
@@ -39,7 +39,7 @@ return {
       desc = 'Trouble: Toggle current buffer',
     },
     {
-      '<leader>xe',
+      '<leader>xee',
       function()
         local trouble = require('trouble.api')
 
@@ -72,7 +72,7 @@ return {
       desc = 'Trouble: Toggle errors current buffer',
     },
     {
-      '<leader>xq',
+      '<leader>xqq',
       function()
         local trouble = require('trouble.api')
 
@@ -101,7 +101,7 @@ return {
       desc = 'Trouble: Quickfix',
     },
     {
-      '<leader>xQ',
+      '<leader>xQq',
       function()
         local trouble = require('trouble.api')
 
@@ -196,15 +196,19 @@ return {
     {
       '[x',
       function()
+        ---@diagnostic disable: missing-parameter
         require('trouble').prev()
         require('trouble').jump()
+        ---@diagnostic enable: missing-parameter
       end,
     },
     {
       ']x',
       function()
+        ---@diagnostic disable: missing-parameter
         require('trouble').next()
         require('trouble').jump()
+        ---@diagnostic enable: missing-parameter
       end,
     },
     {
