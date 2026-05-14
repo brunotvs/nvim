@@ -101,7 +101,7 @@ return {
       desc = 'Trouble: Quickfix',
     },
     {
-      '<leader>xQq',
+      '<leader>xqQ',
       function()
         local trouble = require('trouble.api')
 
@@ -118,7 +118,7 @@ return {
       desc = 'Trouble: Quickfix',
     },
     {
-      '<leader>xQb',
+      '<leader>xqB',
       function()
         local trouble = require('trouble.api')
 
@@ -138,7 +138,7 @@ return {
       desc = 'Trouble: Quickfix for current buffer',
     },
     {
-      '<leader>xl',
+      '<leader>xll',
       function()
         local trouble = require('trouble.api')
 
