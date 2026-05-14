@@ -110,9 +110,9 @@ return {
         },
         preselect = cmp.PreselectMode.None,
         sources = {
-          { name = 'luasnip' },
           { name = 'nvim_lsp' },
           { name = 'nvim_lsp_signature_help' },
+          { name = 'luasnip' },
           { name = 'copilot' },
           { name = 'path' },
           { name = 'buffer', keyword_length = 6 },
