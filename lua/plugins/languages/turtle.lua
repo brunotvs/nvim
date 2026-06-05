@@ -1,6 +1,10 @@
 LspServers = vim.tbl_extend('force', LspServers, {
-  turtle_ls = {},
+  turtle_ls = {
+    cmd = { 'turtle-language-server' },
+  },
 })
+
+vim.filetype.add({ extension = { ttl = 'turtle' } })
 
 --- @type LazySpec
 return {
