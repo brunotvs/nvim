@@ -1,8 +1,8 @@
 LspServers = vim.tbl_extend('force', LspServers, {
-  turtle_ls = {
-    cmd = { 'turtle-language-server' },
-  },
+  turtle_ls = {},
 })
+
+TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'turtle' })
 
 vim.filetype.add({ extension = { ttl = 'turtle' } })
 
