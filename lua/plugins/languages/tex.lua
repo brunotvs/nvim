@@ -19,6 +19,7 @@ LspServers = vim.tbl_extend('force', LspServers, {
             ['\\listof{}'] = 'ignore',
             ['\\author{}'] = 'ignore',
             ['\\author[]{}'] = 'ignore',
+            ['\\subref{}'] = 'ignore',
           },
         },
       },
