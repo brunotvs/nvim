@@ -1,4 +1,4 @@
-LspServers = vim.tbl_extend('force', LspServers, { pyright = {} })
+LspServers = vim.tbl_extend('force', LspServers, { pyright = {}, ruff = {} })
 MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'debugpy' })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'python' })
 NeotestAdapters = vim.tbl_extend('force', NeotestAdapters, { ['neotest-python'] = {} })
@@ -30,5 +30,14 @@ return {
     init = function()
       vim.g.nvim_ipy_perform_mappings = 0
     end,
+  },
+  {
+    'stevearc/conform.nvim',
+    ---@type conform.setupOpts
+    opts = {
+      formatters_by_ft = {
+        python = {},
+      },
+    },
   },
 }
