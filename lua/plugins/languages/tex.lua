@@ -27,6 +27,7 @@ LspServers = vim.tbl_extend('force', LspServers, {
   },
 })
 
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'latexindent' })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'latex' })
 
 return {
@@ -39,6 +40,15 @@ return {
       'barreiroleo/ltex_extra.nvim',
       ft = { 'markdown', 'tex' },
       dependencies = { 'neovim/nvim-lspconfig' },
+    },
+    {
+      'stevearc/conform.nvim',
+      ---@type conform.setupOpts
+      opts = {
+        formatters_by_ft = {
+          tex = {},
+        },
+      },
     },
   },
 }

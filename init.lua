@@ -27,7 +27,6 @@ LspServers = {
 
 ---@type string[]
 MasonEnsureInstalled = {
-  'latexindent',
   'editorconfig-checker',
 }
 ---@type string[]
