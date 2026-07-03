@@ -46,15 +46,16 @@ LspServers = vim.tbl_extend('force', LspServers, {
     },
   },
 })
-ServersToFilterFromFormat = vim.list_extend(ServersToFilterFromFormat, { 'tsserver', 'jsonls' })
+ServersToFilterFromFormat = vim.list_extend(ServersToFilterFromFormat, { 'ts_ls', 'jsonls' })
 MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, {
   'angular-language-server',
   'eslint-lsp',
-  'json-lsp',
-  'js-debug-adapter',
-  'prettierd',
   'eslint_d',
+  'js-debug-adapter',
+  'json-lsp',
   'nxls',
+  'prettierd',
+  'typescript-language-server',
 })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'javascript', 'jsdoc', 'json' })
 NeotestAdapters = vim.tbl_extend('force', NeotestAdapters, {
@@ -86,8 +87,7 @@ return {
             command = 'node',
             -- 💀 Make sure to update this path to point to your installation
             args = {
-              require('mason-core.installer.InstallLocation').global():package('js-debug-adapter') ..
-              '/js-debug/src/dapDebugServer.js',
+              require('mason-core.installer.InstallLocation').global():package('js-debug-adapter') .. '/js-debug/src/dapDebugServer.js',
               '${port}',
             },
           },
