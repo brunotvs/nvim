@@ -1,5 +1,5 @@
 LspServers = vim.tbl_extend('force', LspServers, { pyright = {}, ruff = {} })
-MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'debugpy' })
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'pyright', 'ruff', 'debugpy' })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'python' })
 NeotestAdapters = vim.tbl_extend('force', NeotestAdapters, { ['neotest-python'] = {} })
 

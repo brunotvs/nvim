@@ -27,7 +27,7 @@ LspServers = vim.tbl_extend('force', LspServers, {
   },
 })
 
-MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'latexindent' })
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'texlab', 'ltex-ls-plus', 'latexindent' })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'latex' })
 
 return {

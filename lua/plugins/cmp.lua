@@ -28,7 +28,6 @@ return {
       'petertriho/cmp-git',
       'phenax/cmp-graphql',
       'micangl/cmp-vimtex',
-
       {
         'brunotvs/cmp-conventionalcommits',
         ---@type cmp-conventionalcommits.PluginOptions
@@ -41,6 +40,7 @@ return {
         main = 'copilot_cmp',
         opts = {},
       },
+      'kristijanhusak/vim-dadbod-completion',
     },
     init = function(_)
       local cmp = require('cmp')
@@ -62,6 +62,10 @@ return {
           { name = 'path' },
           { name = 'buffer', keyword_length = 3 },
         },
+      })
+
+      cmp.setup.filetype({ 'sql', 'mysql', 'plsql' }, {
+        sources = { name = 'vim-dadbod-completion' },
       })
 
       -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).

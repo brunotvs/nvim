@@ -19,7 +19,13 @@ LspServers = vim.tbl_extend('force', LspServers, {
   },
 })
 
-MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'stylua', 'local-lua-debugger', 'luals-addon-busted', 'luals-addon-luassert' })
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, {
+  'lua-language-server',
+  'stylua',
+  'local-lua-debugger',
+  'luals-addon-busted',
+  'luals-addon-luassert',
+})
 
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'lua' })
 NeotestAdapters = vim.tbl_extend('force', NeotestAdapters, { ['neotest-busted'] = {} })

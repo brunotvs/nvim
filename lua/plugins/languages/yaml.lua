@@ -1,5 +1,5 @@
 LspServers = vim.tbl_extend('force', LspServers, { yamlls = {} })
-MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'prettierd' })
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'yaml-language-server', 'prettierd' })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'yaml' })
 
 --- @type LazySpec

@@ -1,3 +1,5 @@
+--- @module "mason"
+
 local function ensure_installed(packages)
   local mr = require('mason-registry')
   for _, tool in ipairs(packages) do
@@ -8,29 +10,39 @@ local function ensure_installed(packages)
   end
 end
 
---- @module "mason"
 --- @type LazySpec
 return {
   'williamboman/mason.nvim',
   build = ':MasonUpdate',
   ---@type MasonSettings
   opts = {
-    ensure_installed = MasonEnsureInstalled,
     registries = {
       'github:brunotvs/custom-mason-registry',
       'github:mason-org/mason-registry',
     },
   },
-  ---@param opts MasonSettings | { ensure_installed: string[] }
-  config = function(_, opts)
-    require('mason').setup(opts)
+  init = function()
     local mr = require('mason-registry')
     if mr.refresh then
       mr.refresh(function()
-        ensure_installed(opts.ensure_installed)
+        ensure_installed(MasonEnsureInstalled)
       end)
     else
-      ensure_installed(opts.ensure_installed)
+      ensure_installed(MasonEnsureInstalled)
+    end
+
+    local ensure_installed_map = {}
+    for _, name in ipairs(MasonEnsureInstalled) do
+      ensure_installed_map[name] = true
+    end
+
+
+    local installed_names = mr.get_installed_package_names()
+
+    for _, instaled_name in ipairs(installed_names) do
+      if not ensure_installed_map[instaled_name] then
+        mr.get_package(instaled_name):uninstall()
+      end
     end
   end,
   keys = { { '<M-m>', '<cmd>Mason<CR>', desc = 'Mason: Open' } },

@@ -1,4 +1,5 @@
 LspServers = vim.tbl_extend('force', LspServers, { rledgerls = {} })
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'rustledger-lsp' })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'beancount' })
 
 vim.filetype.add({ extension = { beancount = 'beancount' } })
@@ -8,12 +9,5 @@ return {
   dependencies = {
     'beancount-config',
     virtual = true,
-    config = function()
-      local mappings_server = require('mason-lspconfig.mappings.server')
-      mappings_server.lspconfig_to_package['rledgerls'] = 'rustledger-lsp'
-      mappings_server.package_to_lspconfig['rustledger-lsp'] = 'rledgerls'
-      local mappings_filetypes = require('mason-lspconfig.mappings.filetype')
-      mappings_filetypes.beancount = { 'beancount', 'rledgerls' }
-    end,
   },
 }

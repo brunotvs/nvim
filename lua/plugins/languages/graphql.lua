@@ -14,7 +14,7 @@ LspServers = vim.tbl_extend('force', LspServers, {
   },
 })
 
-MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'prettierd' })
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'graphql-language-service-cli', 'prettierd' })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'graphql' })
 
 --- @type LazySpec

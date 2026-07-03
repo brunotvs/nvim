@@ -1,5 +1,5 @@
 LspServers = vim.tbl_extend('force', LspServers, { emmet_ls = {}, html = {} })
-MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'prettierd' })
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'emmet-ls', 'prettierd' })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'html' })
 ServersToFilterFromFormat = vim.list_extend(ServersToFilterFromFormat, { 'html' })
 --- @type LazySpec

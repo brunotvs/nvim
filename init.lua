@@ -27,7 +27,7 @@ LspServers = {
 
 ---@type string[]
 MasonEnsureInstalled = {
-  'editorconfig-checker',
+  ['editorconfig-checker'] = true,
 }
 ---@type string[]
 TreesitterEnsureInstalled = {

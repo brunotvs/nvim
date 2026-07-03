@@ -2,7 +2,7 @@ LspServers = vim.tbl_extend('force', LspServers, {
   gopls = {},
 })
 
-MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'go-debug-adapter', 'delve' })
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'gopls', 'go-debug-adapter', 'delve' })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'go' })
 NeotestAdapters = vim.tbl_extend('force', NeotestAdapters, { ['neotest-golang'] = {} })
 

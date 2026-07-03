@@ -1,5 +1,5 @@
 LspServers = vim.tbl_extend('force', LspServers, { cssls = {} })
-MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'prettierd' })
+MasonEnsureInstalled = vim.list_extend(MasonEnsureInstalled, { 'css-lsp', 'prettierd' })
 TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'css', 'scss' })
 ServersToFilterFromFormat = vim.list_extend(ServersToFilterFromFormat, { 'cssls' })
 
