@@ -23,11 +23,13 @@ LspServers = {
   clangd = {},
   perlnavigator = {},
   vimls = {},
+  svelte = {},
 }
 
 ---@type string[]
 MasonEnsureInstalled = {
-  ['editorconfig-checker'] = true,
+  'editorconfig-checker',
+  'svelte-language-server',
 }
 ---@type string[]
 TreesitterEnsureInstalled = {
