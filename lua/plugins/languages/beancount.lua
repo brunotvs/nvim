@@ -5,9 +5,6 @@ TreesitterEnsureInstalled = vim.list_extend(TreesitterEnsureInstalled, { 'beanco
 vim.filetype.add({ extension = { beancount = 'beancount' } })
 --- @type LazySpec
 return {
-  'williamboman/mason-lspconfig.nvim',
-  dependencies = {
-    'beancount-config',
-    virtual = true,
-  },
+  'beancount-config',
+  virtual = true,
 }

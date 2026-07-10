@@ -35,7 +35,6 @@ return {
   virtual = true,
   ft = { 'tex', 'latex', 'markdown' },
   dependencies = {
-    { 'williamboman/mason-lspconfig.nvim' },
     {
       'barreiroleo/ltex_extra.nvim',
       ft = { 'markdown', 'tex' },

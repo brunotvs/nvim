@@ -8,9 +8,6 @@ vim.filetype.add({ extension = { ttl = 'turtle' } })
 
 --- @type LazySpec
 return {
-  'williamboman/mason-lspconfig.nvim',
-  dependencies = {
-    'turtle-config',
-    virtual = true,
-  },
+  'turtle-config',
+  virtual = true,
 }
