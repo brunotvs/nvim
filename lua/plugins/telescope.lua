@@ -1,7 +1,7 @@
 local function telescope_lsp_keymaps(_, _)
   vim.keymap.set('n', '<leader>ds', require('telescope.builtin').lsp_document_symbols, { desc = 'LSP: [D]ocument [S]ymbols' })
   vim.keymap.set('n', '<leader>ws', require('telescope.builtin').lsp_workspace_symbols, { desc = 'LSP: [W]orkspace [S]ymbols' })
-  vim.keymap.set('n', '<leader>wd', require('telescope.builtin').lsp_dynamic_workspace_symbols, { desc = 'LSP: [W]orkspace [S]ymbols' })
+  vim.keymap.set('n', '<leader>wd', require('telescope.builtin').lsp_dynamic_workspace_symbols, { desc = 'LSP: [W]orkspace [D]ynamic symbols' })
 end
 
 AdditionalOnAttachFunctions = vim.list_extend(AdditionalOnAttachFunctions, { telescope_lsp_keymaps })
