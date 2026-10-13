@@ -183,7 +183,7 @@ return {
     {
       ';',
       function()
-        require('nvim-treesitter-textobjects.repeatable_move').repeat_last_move_next()
+        require('nvim-treesitter-textobjects.repeatable_move').repeat_last_move()
       end,
       mode = { 'n', 'x', 'o' },
       desc = 'Repeat last move next',
@@ -191,7 +191,7 @@ return {
     {
       ',',
       function()
-        require('nvim-treesitter-textobjects.repeatable_move').repeat_last_move_previous()
+        require('nvim-treesitter-textobjects.repeatable_move').repeat_last_move_opposite()
       end,
       mode = { 'n', 'x', 'o' },
       desc = 'Repeat last move previous',
