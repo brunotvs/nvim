@@ -180,21 +180,21 @@ return {
       mode = { 'n', 'x', 'o' },
       desc = 'Move to previous class end',
     },
-    {
-      ';',
-      function()
-        require('nvim-treesitter-textobjects.repeatable_move').repeat_last_move()
-      end,
-      mode = { 'n', 'x', 'o' },
-      desc = 'Repeat last move next',
-    },
-    {
-      ',',
-      function()
-        require('nvim-treesitter-textobjects.repeatable_move').repeat_last_move_opposite()
-      end,
-      mode = { 'n', 'x', 'o' },
-      desc = 'Repeat last move previous',
-    },
+    -- {
+    --   ';',
+    --   function()
+    --     require('nvim-treesitter-textobjects.repeatable_move').repeat_last_move()
+    --   end,
+    --   mode = { 'n', 'x', 'o' },
+    --   desc = 'Repeat last move next',
+    -- },
+    -- {
+    --   ',',
+    --   function()
+    --     require('nvim-treesitter-textobjects.repeatable_move').repeat_last_move_opposite()
+    --   end,
+    --   mode = { 'n', 'x', 'o' },
+    --   desc = 'Repeat last move previous',
+    -- },
   },
 }
